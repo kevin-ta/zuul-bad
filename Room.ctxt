@@ -1,12 +1,17 @@
 #BlueJ class context
 comment0.params=pDescription
 comment0.target=Room(java.lang.String)
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ Game\r\n\ Il\ permet\ d'initialiser\ un\ objet\ pi\u00E8ce\ et\ la\ HashMap\ des\ sorties\ possibles\r\n
 comment1.params=
 comment1.target=java.lang.String\ getDescription()
+comment1.text=\r\n\ Accesseur\ qui\ retourne\ la\ description\ de\ la\ pi\u00E8ce\r\n
 comment2.params=pDirection
 comment2.target=Room\ getExit(java.lang.String)
+comment2.text=\r\n\ Accesseur\ qui\ retourne\ la\ sortir\r\n
 comment3.params=
 comment3.target=java.lang.String\ getExitString()
+comment3.text=\r\n\ Mutateur\ qui\ retourne\ la\ liste\ des\ sorties\r\n
 comment4.params=pDirection\ pNeighbor
 comment4.target=void\ setExit(java.lang.String,\ Room)
+comment4.text=\r\n\ Cr\u00E9e\ une\ sortie\ dans\ une\ direction\ donn\u00E9e\r\n
 numComments=5

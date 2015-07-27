@@ -1,8 +1,15 @@
- public class Game
+/**
+ * Classe principale du jeu, elle permet de démarrer Zuul.
+ */
+public class Game
 {
     private Room aCurrentRoom;
     private Parser aParser;
     
+    /**
+     * Constructeur de la classe Game.
+     * Il permet d'initialiser le jeu et d'afficher un message de bienvenue
+     */
     public Game()
     {
         createRooms();
@@ -10,6 +17,9 @@
         this.aParser = new Parser();
     }
     
+    /**
+     * Procédure permettant de créer les pièces du jeu
+     */
     private void createRooms()
     {
         Room vOutside = new Room("outside the main entrance of the university");
@@ -38,6 +48,9 @@
         this.aCurrentRoom = vOutside;
     }
     
+    /**
+     * Commande de déplacement
+     */
     private void goRoom(final Command pCommand)
     {
         if (!pCommand.hasSecondWord())
@@ -58,6 +71,9 @@
         }
     }
     
+    /**
+     * Affiche le message de bienvenue
+     */
     private void printWelcome()
     {
         System.out.println("Welcome to the World of Zuul!");
@@ -66,6 +82,9 @@
         printLocationInfo();
     }
     
+    /**
+     * Commande d'aide
+     */
     private void printHelp()
     {
         System.out.println("You are lost. You are alone.");
@@ -74,6 +93,9 @@
         System.out.println("go quit help");
     }
     
+    /**
+     * Commande qui permet de quitte le jeu si la méthode retourne vrai
+     */
     private boolean quit(final Command pCommand)
     {
         if (pCommand.hasSecondWord())
@@ -84,6 +106,9 @@
         return true;
     }
     
+    /**
+     * Traite toutes les commandes possibles du jeu
+     */
     private boolean processCommand(final Command pCommand)
     {
         String Command = pCommand.getCommandWord();
@@ -107,7 +132,10 @@
         return false;
     }
     
-    public void play()
+    /**
+     * Reçoit les commandes du clavier et ne s'arrête qu'après avoir tapé quit
+     */
+    private void play()
     {
         printWelcome();
         boolean vFinished = false;
@@ -119,6 +147,9 @@
         System.out.println("Thank you for playing.  Good bye.");
     }
     
+    /**
+     * Affiche des informations sur la pièce actuelle
+     */
     private void printLocationInfo()
     {
         System.out.println("Vous êtes " + this.aCurrentRoom.getDescription());
