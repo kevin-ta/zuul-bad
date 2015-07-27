@@ -128,6 +128,10 @@ public class Game
         {
             look();
         }
+        else if (Command.equals("eat"))
+        {
+            eat();
+        }
         else
         {
             System.out.println("I don't know what you mean...");
@@ -165,5 +169,13 @@ public class Game
     private void look()
     {
         System.out.println(this.aCurrentRoom.getLongDescription());
+    }
+    
+    /**
+     * Commande eat
+     */
+    private void eat()
+    {
+        System.out.println("You have eaten now and you are not hungry any more.");
     }
 } // Game
