@@ -15,4 +15,6 @@ comment6.params=pCommand
 comment6.target=boolean\ processCommand(Command)
 comment7.params=
 comment7.target=void\ play()
-numComments=8
+comment8.params=
+comment8.target=void\ printLocationInfo()
+numComments=9

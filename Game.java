@@ -59,24 +59,7 @@
         else
         {
             this.aCurrentRoom = vNextRoom;
-            System.out.println("You are " + this.aCurrentRoom.getDescription());
-            System.out.print("Exits:");
-            if (this.aCurrentRoom.aNorthExit != null)
-            {
-                System.out.print(" north");
-            }
-            if (this.aCurrentRoom.aEastExit != null)
-            {
-                System.out.print(" east");
-            }
-            if (this.aCurrentRoom.aWestExit != null)
-            {
-                System.out.print(" west");
-            }
-            if (this.aCurrentRoom.aSouthExit != null)
-            {
-                System.out.print(" south");
-            }
+            printLocationInfo();
         }
     }
     
@@ -85,24 +68,7 @@
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("World of Zuul is a new, incredibly boring adventure game.");
         System.out.println("Type 'help' if you need help.\n");
-        System.out.println("You are " + this.aCurrentRoom.getDescription());
-        System.out.print("Exits:");
-        if (this.aCurrentRoom.aNorthExit != null)
-        {
-            System.out.print(" north");
-        }
-        if (this.aCurrentRoom.aEastExit != null)
-        {
-            System.out.print(" east");
-        }
-        if (this.aCurrentRoom.aWestExit != null)
-        {
-            System.out.print(" west");
-        }
-        if (this.aCurrentRoom.aSouthExit != null)
-        {
-            System.out.print(" south");
-        }
+        printLocationInfo();
     }
     
     private void printHelp()
@@ -156,5 +122,27 @@
             vFinished = processCommand(vCommand);
         }
         System.out.println("Thank you for playing.  Good bye.");
+    }
+    
+    private void printLocationInfo()
+    {
+        System.out.println("Vous êtes " + this.aCurrentRoom.getDescription());
+        System.out.print("Exits:");
+        if (this.aCurrentRoom.aNorthExit != null)
+        {
+            System.out.print(" north");
+        }
+        if (this.aCurrentRoom.aEastExit != null)
+        {
+            System.out.print(" east");
+        }
+        if (this.aCurrentRoom.aWestExit != null)
+        {
+            System.out.print(" west");
+        }
+        if (this.aCurrentRoom.aSouthExit != null)
+        {
+            System.out.print(" south");
+        }
     }
 } // Game
