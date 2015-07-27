@@ -40,4 +40,16 @@ public class CommandWords
         // n'a pas ete trouvee dans le tableau
         return false;
     } // isCommand()
+    
+    /**
+     * Affiche tous les commandes valides
+     */
+    public void showAll()
+    {
+        for (String vCommand : sValidCommands)
+        {
+            System.out.print(vCommand + " ");
+        }
+        System.out.println();
+    }
 } // CommandWords
