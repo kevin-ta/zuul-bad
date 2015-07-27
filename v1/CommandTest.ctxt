@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CommandTest()
+comment0.text=\r\n\ Default\ constructor\ for\ test\ class\ SRoomTest\r\n
+comment1.params=
+comment1.target=void\ setUp()
+comment1.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment10.params=
+comment10.target=void\ testIU_6()
+comment2.params=
+comment2.target=void\ tearDown()
+comment2.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+comment3.params=
+comment3.target=void\ testClasse_1_1()
+comment4.params=
+comment4.target=void\ testAttributs_2()
+comment5.params=pN
+comment5.target=void\ auxTest2(java.lang.String)
+comment6.params=
+comment6.target=void\ testConstructeur_3()
+comment7.params=
+comment7.target=void\ testAccesseurs_4()
+comment8.params=pName
+comment8.target=void\ auxTest4(java.lang.String)
+comment9.params=
+comment9.target=void\ testHSW_5()
+numComments=11
