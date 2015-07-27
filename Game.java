@@ -90,7 +90,7 @@ public class Game
         System.out.println("You are lost. You are alone.");
         System.out.println("You wander around at the university.");
         System.out.println("Your command words are:");
-        this.aParser.showCommands();
+        System.out.println(this.aParser.getCommandList());
     }
     
     /**
@@ -143,7 +143,7 @@ public class Game
     /**
      * Reçoit les commandes du clavier et ne s'arrête qu'après avoir tapé quit
      */
-    public void play()
+    private void play()
     {
         printWelcome();
         boolean vFinished = false;

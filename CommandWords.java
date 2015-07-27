@@ -44,12 +44,11 @@ public class CommandWords
     /**
      * Affiche tous les commandes valides
      */
-    public void showAll()
-    {
-        for (String vCommand : sValidCommands)
-        {
-            System.out.print(vCommand + " ");
+    public String getCommandList() {
+        String vCommandList = "";
+        for(int i = 0; i < sValidCommands.length; i++) {
+            vCommandList += sValidCommands[i] + "  ";
         }
-        System.out.println();
+        return vCommandList;
     }
 } // CommandWords
