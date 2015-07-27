@@ -13,7 +13,6 @@ public class Game
     public Game()
     {
         createRooms();
-        printWelcome();
         this.aParser = new Parser();
     }
     
@@ -111,6 +110,10 @@ public class Game
      */
     private boolean processCommand(final Command pCommand)
     {
+        if(pCommand.isUnknown()) {
+            System.out.println("I don't know what you mean...");
+            return false;
+        }
         String Command = pCommand.getCommandWord();
         if (Command.equals("go"))
         {
@@ -132,18 +135,13 @@ public class Game
         {
             eat();
         }
-        else
-        {
-            System.out.println("I don't know what you mean...");
-            return false;
-        }
         return false;
     }
     
     /**
      * Reçoit les commandes du clavier et ne s'arrête qu'après avoir tapé quit
      */
-    private void play()
+    public void play()
     {
         printWelcome();
         boolean vFinished = false;

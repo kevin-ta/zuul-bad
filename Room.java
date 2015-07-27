@@ -35,7 +35,7 @@ public class Room
     /**
      * Mutateur qui retourne la liste des sorties
      */
-    public String getExitString()
+    private String getExitString()
     {
         String vReturnString = "Exits:";
         Set<String> keys = exits.keySet();
