@@ -1,4 +1,6 @@
-import java.util.HashMap; 
+import java.util.HashMap;
+import java.util.Set;
+import java.util.Iterator;
 
  public class Room
 {
@@ -27,24 +29,13 @@ import java.util.HashMap;
     
     public String getExitString()
     {
-        String exit = "Exits:";
-        if (this.aNorthExit != null)
+        String vReturnString = "Exits:";
+        Set<String> keys = exits.keySet();
+        for (String exit : keys)
         {
-            exit +=" north";
+            vReturnString += " " + exit;
         }
-        if (this.aEastExit != null)
-        {
-            exit +=" east";
-        }
-        if (this.aSouthExit != null)
-        {
-            exit+=" south"; 
-        }   
-        if (this.aWestExit != null)
-        {
-            exit +=" west";
-        }
-        return exit;
+        return vReturnString;
     }
     
     public void setExit(final String pDirection, final Room pNeighbor)
