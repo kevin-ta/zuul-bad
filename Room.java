@@ -44,4 +44,26 @@
         }
         return null;
     }
+    
+    public String getExitString()
+    {
+        String exit = "Exits:";
+        if (this.aNorthExit != null)
+        {
+            exit +=" north";
+        }
+        if (this.aEastExit != null)
+        {
+            exit +=" east";
+        }
+        if (this.aSouthExit != null)
+        {
+            exit+=" south"; 
+        }   
+        if (this.aWestExit != null)
+        {
+            exit +=" west";
+        }
+        return exit; 
+    }
 } // Room

@@ -7,4 +7,6 @@ comment2.params=pNorthExit\ pEastExit\ pWestExit\ pSouthExit
 comment2.target=void\ setExits(Room,\ Room,\ Room,\ Room)
 comment3.params=pDirection
 comment3.target=Room\ getExit(java.lang.String)
-numComments=4
+comment4.params=
+comment4.target=java.lang.String\ getExitString()
+numComments=5
