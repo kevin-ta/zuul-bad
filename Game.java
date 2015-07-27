@@ -29,29 +29,13 @@
     
     private void goRoom(final Command pCommand)
     {
-        Room vNextRoom = null;
         if (!pCommand.hasSecondWord())
         {
             System.out.println("Go where ?");
             return;
         }
         String vDirection = pCommand.getSecondWord();
-        if (vDirection.equals("north"))
-        {
-            vNextRoom = this.aCurrentRoom.aNorthExit;
-        }
-        if (vDirection.equals("east"))
-        {
-            vNextRoom = this.aCurrentRoom.aEastExit;
-        }
-        if (vDirection.equals("west"))
-        {
-            vNextRoom = this.aCurrentRoom.aWestExit;
-        }
-        if (vDirection.equals("south"))
-        {
-            vNextRoom = this.aCurrentRoom.aSouthExit;
-        }
+        Room vNextRoom = this.aCurrentRoom.getExit(vDirection);
         if (vNextRoom == null)
         {
             System.out.println("There is no door !");

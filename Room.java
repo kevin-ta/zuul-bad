@@ -23,4 +23,25 @@
         this.aWestExit  = pWestExit;
         this.aSouthExit = pSouthExit;
     }
+    
+    public Room getExit(final String pDirection)
+    {
+        if (pDirection.equals("north"))
+        {
+            return this.aNorthExit;
+        }
+        if (pDirection.equals("east"))
+        {
+            return this.aEastExit;
+        }
+        if (pDirection.equals("south"))
+        {
+            return this.aWestExit;
+        }
+        if (pDirection.equals("west"))
+        {
+            return this.aWestExit;
+        }
+        return null;
+    }
 } // Room

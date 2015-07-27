@@ -5,4 +5,6 @@ comment1.params=
 comment1.target=java.lang.String\ getDescription()
 comment2.params=pNorthExit\ pEastExit\ pWestExit\ pSouthExit
 comment2.target=void\ setExits(Room,\ Room,\ Room,\ Room)
-numComments=3
+comment3.params=pDirection
+comment3.target=Room\ getExit(java.lang.String)
+numComments=4
