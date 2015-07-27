@@ -18,12 +18,19 @@
         Room vLab     = new Room("in a computing lab");
         Room vOffice  = new Room("in the computing admin office");
         
-        vOutside.setExits(null, vTheatre, vPub, vLab);
-        vTheatre.setExits(null, null, vOutside, null);
-        vPub.setExits(null, vOutside, null, null);
-        vLab.setExits(vOutside, vOffice, null, null);
-        vOffice.setExits(null, null, vLab, null);
+        vOutside.setExit("east", vTheatre);
+        vOutside.setExit("west", vPub);
+        vOutside.setExit("south", vLab);
         
+        vTheatre.setExit("west", vOutside);
+        
+        vPub.setExit("east", vOutside);
+        
+        vLab.setExit("north", vOutside);
+        vLab.setExit("east", vOffice);
+
+        vOffice.setExit("west", vLab);
+
         this.aCurrentRoom = vOutside;
     }
     

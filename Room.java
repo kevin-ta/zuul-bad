@@ -1,3 +1,5 @@
+import java.util.HashMap; 
+
  public class Room
 {
     private String aDescription;
@@ -5,10 +7,12 @@
     public Room aEastExit;
     public Room aWestExit;
     public Room aSouthExit;
+    private HashMap<String, Room> exits;
     
     public Room(final String pDescription)
     {
         this.aDescription = pDescription;
+        exits = new HashMap<String, Room>();
     }
 
     public String getDescription()
@@ -16,33 +20,9 @@
         return this.aDescription;
     }
     
-    public void setExits(final Room pNorthExit, final Room pEastExit, final Room pWestExit, final Room pSouthExit)
-    {
-        this.aNorthExit = pNorthExit;
-        this.aEastExit  = pEastExit;
-        this.aWestExit  = pWestExit;
-        this.aSouthExit = pSouthExit;
-    }
-    
     public Room getExit(final String pDirection)
     {
-        if (pDirection.equals("north"))
-        {
-            return this.aNorthExit;
-        }
-        if (pDirection.equals("east"))
-        {
-            return this.aEastExit;
-        }
-        if (pDirection.equals("south"))
-        {
-            return this.aWestExit;
-        }
-        if (pDirection.equals("west"))
-        {
-            return this.aWestExit;
-        }
-        return null;
+        return exits.get(pDirection);
     }
     
     public String getExitString()
@@ -64,6 +44,11 @@
         {
             exit +=" west";
         }
-        return exit; 
+        return exit;
+    }
+    
+    public void setExit(final String pDirection, final Room pNeighbor)
+    {
+        exits.put(pDirection, pNeighbor);
     }
 } // Room
