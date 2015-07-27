@@ -124,6 +124,10 @@ public class Game
         {
             printHelp();
         }
+        else if (Command.equals("look"))
+        {
+            look();
+        }
         else
         {
             System.out.println("I don't know what you mean...");
@@ -151,6 +155,14 @@ public class Game
      * Affiche des informations sur la pièce actuelle
      */
     private void printLocationInfo()
+    {
+        System.out.println(this.aCurrentRoom.getLongDescription());
+    }
+    
+    /**
+     * Affiche des informations sur la pièce actuelle
+     */
+    private void look()
     {
         System.out.println(this.aCurrentRoom.getLongDescription());
     }
