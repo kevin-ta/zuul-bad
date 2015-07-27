@@ -152,7 +152,6 @@ public class Game
      */
     private void printLocationInfo()
     {
-        System.out.println("Vous êtes " + this.aCurrentRoom.getDescription());
-        System.out.print(this.aCurrentRoom.getExitString());
+        System.out.println(this.aCurrentRoom.getLongDescription());
     }
 } // Game

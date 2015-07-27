@@ -23,15 +23,7 @@ public class Room
         this.aDescription = pDescription;
         exits = new HashMap<String, Room>();
     }
-    
-    /**
-     * Accesseur qui retourne la description de la pièce
-     */
-    public String getDescription()
-    {
-        return this.aDescription;
-    }
-    
+
     /**
      * Accesseur qui retourne la sortir
      */
@@ -60,5 +52,13 @@ public class Room
     public void setExit(final String pDirection, final Room pNeighbor)
     {
         exits.put(pDirection, pNeighbor);
+    }
+    
+    /**
+     * Accesseur qui retourne la description de la pièce
+     */
+    public String getLongDescription()
+    {
+        return "Vous etes " + this.aDescription + "\n"  + getExitString();
     }
 } // Room
