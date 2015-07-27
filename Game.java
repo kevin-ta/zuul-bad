@@ -16,6 +16,7 @@
         Room vTheatre = new Room("in a lecture theatre");
         Room vPub     = new Room("in the campus pub");
         Room vLab     = new Room("in a computing lab");
+        Room vServer  = new Room("in the server room");
         Room vOffice  = new Room("in the computing admin office");
         
         vOutside.setExit("east", vTheatre);
@@ -28,6 +29,9 @@
         
         vLab.setExit("north", vOutside);
         vLab.setExit("east", vOffice);
+        vLab.setExit("up", vServer);
+        
+        vServer.setExit("down", vLab);
 
         vOffice.setExit("west", vLab);
 
