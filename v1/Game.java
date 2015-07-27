@@ -3,11 +3,13 @@ package v1;
 public class Game
 {
     private Room aCurrentRoom;
+    private Parser aParser;
     
     public Game()
     {
         createRooms();
         printWelcome();
+        this.aParser = new Parser();
     }
     
     private void createRooms()
@@ -144,5 +146,17 @@ public class Game
             return false;
         }
         return false;
+    }
+    
+    public void play()
+    {
+        printWelcome();
+        boolean vFinished = false;
+        while(!vFinished)
+        {
+            Command vCommand = this.aParser.getCommand();
+            vFinished = processCommand(vCommand);
+        }
+        System.out.println("Thank you for playing.  Good bye.");
     }
 } // Game

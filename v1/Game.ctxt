@@ -13,4 +13,6 @@ comment5.params=pCommand
 comment5.target=boolean\ quit(Command)
 comment6.params=pCommand
 comment6.target=boolean\ processCommand(Command)
-numComments=7
+comment7.params=
+comment7.target=void\ play()
+numComments=8
