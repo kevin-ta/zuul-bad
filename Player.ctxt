@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=pName
+comment0.target=Player(java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Player\r\n
+comment1.params=nextRoom
+comment1.target=void\ changeRoom(Room)
+comment1.text=\r\n\ Enter\ the\ given\ room.\r\n
+comment2.params=
+comment2.target=Room\ getCurrentRoom()
+comment2.text=\r\n\ Gets\ the\ room\ in\ which\ the\ player\ is\ currently\ located.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment3.text=\r\n\ Gets\ the\ name\r\n
+numComments=4

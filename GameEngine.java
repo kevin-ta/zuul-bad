@@ -8,10 +8,10 @@ import java.io.FileNotFoundException;
  */
 public class GameEngine
 {
-    private Room aCurrentRoom;
     private Parser aParser;
     private UserInterface gui;
     public static Stack<Room> roomHistory;
+    private Player player;
 
     /**
      * Constructeur de la classe Game.
@@ -19,9 +19,11 @@ public class GameEngine
      */
     public GameEngine()
     {
-        createRooms();
+        this.player = new Player("BDE");
         this.aParser = new Parser();
         roomHistory = new Stack<Room>();
+        Room startRoom = createRooms();
+        player.changeRoom(startRoom);
     }
     
     /**
@@ -36,7 +38,7 @@ public class GameEngine
     /**
      * Procédure permettant de créer les pièces du jeu
      */
-    private void createRooms()
+    private Room createRooms()
     {
         Room vOutside = new Room("outside the main entrance of the university", "images/outside.gif");
         Room vTheatre = new Room("in a lecture theatre", "images/courtyard.gif");
@@ -65,7 +67,7 @@ public class GameEngine
         vOutside.addItem(new Item("cola", 1));
         vTheatre.addItem(new Item("juice", 1));
 
-        this.aCurrentRoom = vOutside;
+        return vOutside;
     }
     
     /**
@@ -109,7 +111,7 @@ public class GameEngine
      */
     private void printLocationInfo()
     {
-        gui.println(this.aCurrentRoom.getLongDescription() + "\n");
+        gui.println(player.getCurrentRoom().getLongDescription() + "\n");
     }
     
     /**
@@ -121,7 +123,7 @@ public class GameEngine
         gui.println("World of Zuul is a new, incredibly boring adventure game.");
         gui.println("Type 'help' if you need help.\n");
         printLocationInfo();
-        gui.showImage(this.aCurrentRoom.getImageName());
+        gui.showImage(player.getCurrentRoom().getImageName());
     }
     
     /**
@@ -135,18 +137,18 @@ public class GameEngine
             return;
         }
         String vDirection = pCommand.getSecondWord();
-        Room vNextRoom = this.aCurrentRoom.getExit(vDirection);
+        Room vNextRoom = player.getCurrentRoom().getExit(vDirection);
         if (vNextRoom == null)
         {
             gui.println("There is no door !");
         }
         else
         {
-            roomHistory.push(this.aCurrentRoom);
-            this.aCurrentRoom = vNextRoom;
+            roomHistory.push(player.getCurrentRoom());
+            player.changeRoom(vNextRoom);
             printLocationInfo();
-            if(aCurrentRoom.getImageName() != null)
-                gui.showImage(aCurrentRoom.getImageName());
+            if(player.getCurrentRoom().getImageName() != null)
+                gui.showImage(player.getCurrentRoom().getImageName());
         }
     }
     
@@ -166,7 +168,7 @@ public class GameEngine
      */
     private void look()
     {
-        gui.println(this.aCurrentRoom.getLongDescription() + "\n");
+        gui.println(player.getCurrentRoom().getLongDescription() + "\n");
     }
     
     /**
@@ -193,10 +195,10 @@ public class GameEngine
         }
         else
         {
-            this.aCurrentRoom = roomHistory.pop();
+            player.changeRoom(roomHistory.pop());
             printLocationInfo();
-            if(aCurrentRoom.getImageName() != null)
-                gui.showImage(aCurrentRoom.getImageName());
+            if(player.getCurrentRoom().getImageName() != null)
+                gui.showImage(player.getCurrentRoom().getImageName());
         }
     }
     
