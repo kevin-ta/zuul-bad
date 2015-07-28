@@ -6,7 +6,8 @@ public class GameEngine
     private Room aCurrentRoom;
     private Parser aParser;
     private UserInterface gui;
-    
+    private Room aPreviousRoom;
+
     /**
      * Constructeur de la classe Game.
      * Il permet d'initialiser le jeu et d'afficher un message de bienvenue
@@ -92,7 +93,7 @@ public class GameEngine
         else if (commandWord.equals("look"))
             look();
         else if (commandWord.equals("back"))
-            goRoom(command);
+            goBack(command);
     }
     
     /**
@@ -133,6 +134,7 @@ public class GameEngine
         }
         else
         {
+            this.aPreviousRoom = aCurrentRoom;
             this.aCurrentRoom = vNextRoom;
             printLocationInfo();
             if(aCurrentRoom.getImageName() != null)
@@ -165,6 +167,29 @@ public class GameEngine
     private void eat()
     {
         gui.println("You have eaten now and you are not hungry any more.\n");
+    }
+    
+    /**
+     * Permet de revenir en arrière
+     */
+    private void goBack(final Command pCommand)
+    {
+        if (pCommand.hasSecondWord())
+        {
+            gui.println("Back where ?");
+            return;
+        }
+        if (this.aPreviousRoom == null)
+        {
+            gui.println("You can't back anymore");
+        }
+        else
+        {
+            this.aCurrentRoom = aPreviousRoom;
+            printLocationInfo();
+            if(aCurrentRoom.getImageName() != null)
+                gui.showImage(aCurrentRoom.getImageName());
+        }
     }
     
     private void endGame()
