@@ -31,12 +31,12 @@ public class GameEngine
      */
     private void createRooms()
     {
-        Room vOutside = new Room("outside the main entrance of the university", "outside.gif");
-        Room vTheatre = new Room("in a lecture theatre", "courtyard.gif");
-        Room vPub     = new Room("in the campus pub", "dungeon.gif");
-        Room vLab     = new Room("in a computing lab", "hallway.gif");
-        Room vServer  = new Room("in the server room", "stairs.gif");
-        Room vOffice  = new Room("in the computing admin office", "castle.gif");
+        Room vOutside = new Room("outside the main entrance of the university", "images/outside.gif");
+        Room vTheatre = new Room("in a lecture theatre", "images/courtyard.gif");
+        Room vPub     = new Room("in the campus pub", "images/dungeon.gif");
+        Room vLab     = new Room("in a computing lab", "images/hallway.gif");
+        Room vServer  = new Room("in the server room", "images/stairs.gif");
+        Room vOffice  = new Room("in the computing admin office", "images/castle.gif");
         
         vOutside.setExit("east", vTheatre);
         vOutside.setExit("west", vPub);
