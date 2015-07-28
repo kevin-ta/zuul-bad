@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=pDescription\ pWeight
+comment0.target=Item(java.lang.String,\ double)
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ item\r\n
+comment1.params=
+comment1.target=java.lang.String\ getDescription()
+comment1.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\r\n
+comment2.params=pDescription
+comment2.target=void\ setDescription(java.lang.String)
+comment2.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\r\n
+comment3.params=
+comment3.target=double\ getWeight()
+comment3.text=\r\n\ Accesseur\ pour\ avoir\ le\ poids\ de\ l'item\r\n
+comment4.params=pWeight
+comment4.target=void\ setWeight(double)
+comment4.text=\r\n\ Mutateur\ pour\ d\u00E9finir\ le\ poids\ de\ l'item\r\n
+numComments=5
