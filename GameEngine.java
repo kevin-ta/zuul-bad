@@ -56,6 +56,7 @@ public class GameEngine
         
         vOutside.addItem(new Item("beer", 0.5));
         vOutside.addItem(new Item("cola", 1));
+        vTheatre.addItem(new Item("juice", 1));
 
         this.aCurrentRoom = vOutside;
     }
