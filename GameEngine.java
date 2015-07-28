@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Classe principale du jeu, elle permet de démarrer Zuul.
  */
@@ -6,7 +8,7 @@ public class GameEngine
     private Room aCurrentRoom;
     private Parser aParser;
     private UserInterface gui;
-    private Room aPreviousRoom;
+    public static Stack<Room> roomHistory;
 
     /**
      * Constructeur de la classe Game.
@@ -16,6 +18,7 @@ public class GameEngine
     {
         createRooms();
         this.aParser = new Parser();
+        roomHistory = new Stack<Room>();
     }
     
     /**
@@ -134,7 +137,7 @@ public class GameEngine
         }
         else
         {
-            this.aPreviousRoom = aCurrentRoom;
+            roomHistory.push(this.aCurrentRoom);
             this.aCurrentRoom = vNextRoom;
             printLocationInfo();
             if(aCurrentRoom.getImageName() != null)
@@ -179,13 +182,13 @@ public class GameEngine
             gui.println("Back where ?");
             return;
         }
-        if (this.aPreviousRoom == null)
+        if (roomHistory.isEmpty())
         {
             gui.println("You can't back anymore");
         }
         else
         {
-            this.aCurrentRoom = aPreviousRoom;
+            this.aCurrentRoom = roomHistory.pop();
             printLocationInfo();
             if(aCurrentRoom.getImageName() != null)
                 gui.showImage(aCurrentRoom.getImageName());
