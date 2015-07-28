@@ -1,4 +1,7 @@
 import java.util.Stack;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * Classe principale du jeu, elle permet de démarrer Zuul.
@@ -97,6 +100,8 @@ public class GameEngine
             look();
         else if (commandWord.equals("back"))
             goBack(command);
+        else if (commandWord.equals("test"))
+            test(command);
     }
     
     /**
@@ -194,6 +199,34 @@ public class GameEngine
                 gui.showImage(aCurrentRoom.getImageName());
         }
     }
+    
+    /**
+     * Test
+     */
+    private void test(Command command) 
+    { 
+        if(!command.hasSecondWord())
+        { 
+            gui.println("What file ?"); 
+            return;
+        } 
+        String file = command.getSecondWord();
+        Scanner test = null;
+        try
+        {
+            test = new Scanner(new File(file));
+        }
+        catch(FileNotFoundException evt)
+        {
+            gui.println("The file " + file + " was not found.\n");
+            return;
+        }
+        while(test.hasNextLine())
+        { 
+            interpretCommand((String) test.nextLine());
+        }
+        test.close();
+    } 
     
     /**
      * Met fin au jeu
