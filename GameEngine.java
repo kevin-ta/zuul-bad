@@ -53,6 +53,9 @@ public class GameEngine
         vServer.setExit("down", vLab);
 
         vOffice.setExit("west", vLab);
+        
+        vOutside.addItem(new Item("beer", 0.5));
+        vOutside.addItem(new Item("cola", 1));
 
         this.aCurrentRoom = vOutside;
     }

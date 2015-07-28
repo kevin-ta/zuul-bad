@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Iterator;
+import java.util.ArrayList;
 
 /**
  * Classe qui gère la partie pièce du jeu
@@ -10,6 +11,7 @@ public class Room
     private String aDescription;
     private HashMap<String, Room> exits;
     private String imageName;
+    private ArrayList<Item> items;
     
     /**
      * Constructeur de la classe Game
@@ -20,6 +22,7 @@ public class Room
         this.aDescription = pDescription;
         this.exits = new HashMap<String, Room>();
         this.imageName = image;
+        this.items = new ArrayList<Item>();
     }
 
     /**
@@ -57,14 +60,35 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "Vous etes " + this.aDescription + "\n"  + getExitString();
+        return "Vous etes " + this.aDescription + "\n"  + getExitString() + "\n" + getItemString();
     }
     
     /**
      * Return a string describing the room's image name
      */
-	public String getImageName()
-	{
-		return this.imageName;
-	}
+    public String getImageName()
+    {
+        return this.imageName;
+    }
+    
+    /**
+     * Add an item in the list items.
+     */
+    public void addItem(Item item)
+    {
+        this.items.add(item);
+    }
+    
+    /**
+     * @return all the items present in a list.
+     */
+    public String getItemString()
+    {
+        String returnString = "Items:";
+        for( int i=0; i < items.size(); i++)
+        {
+            returnString += (" " + ((Item) items.get(i)).getLongDescription());
+        }
+        return returnString;
+    }
 } // Room
