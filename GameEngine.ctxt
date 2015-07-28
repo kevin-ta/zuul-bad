@@ -10,6 +10,7 @@ comment10.target=void\ goBack(Command)
 comment10.text=\r\n\ Permet\ de\ revenir\ en\ arri\u00E8re\r\n
 comment11.params=
 comment11.target=void\ endGame()
+comment11.text=\r\n\ Met\ fin\ au\ jeu\r\n
 comment2.params=
 comment2.target=void\ createRooms()
 comment2.text=\r\n\ Proc\u00E9dure\ permettant\ de\ cr\u00E9er\ les\ pi\u00E8ces\ du\ jeu\r\n

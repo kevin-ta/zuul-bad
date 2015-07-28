@@ -195,6 +195,9 @@ public class GameEngine
         }
     }
     
+    /**
+     * Met fin au jeu
+     */
     private void endGame()
     {
         gui.println("Thank you for playing.  Good bye.");

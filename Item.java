@@ -47,6 +47,9 @@ public class Item
         this.aWeight = pWeight;
     }
     
+    /**
+     * Accesseur pour avoir la description de l'item et son poids
+     */
     public String getLongDescription()
     {
         return this.aDescription + " of " + this.aWeight + " kg";

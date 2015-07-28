@@ -16,4 +16,5 @@ comment4.target=void\ setWeight(double)
 comment4.text=\r\n\ Mutateur\ pour\ d\u00E9finir\ le\ poids\ de\ l'item\r\n
 comment5.params=
 comment5.target=java.lang.String\ getLongDescription()
+comment5.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\ et\ son\ poids\r\n
 numComments=6
