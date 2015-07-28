@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
+import javax.swing.JButton;
 import java.awt.Dimension;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
@@ -28,6 +29,7 @@ public class UserInterface implements ActionListener
     private JTextField entryField;
     private JTextArea log;
     private JLabel image;
+    private JButton aHelpButton;
 
     /**
      * Construct a UserInterface. As a parameter, a Game Engine
@@ -92,6 +94,8 @@ public class UserInterface implements ActionListener
     {
         myFrame = new JFrame("Zork");
         entryField = new JTextField(34);
+        
+        aHelpButton = new JButton("Help");
 
         log = new JTextArea();
         log.setEditable(false);
@@ -106,6 +110,7 @@ public class UserInterface implements ActionListener
         panel.add(image, BorderLayout.NORTH);
         panel.add(listScroller, BorderLayout.CENTER);
         panel.add(entryField, BorderLayout.SOUTH);
+        panel.add(aHelpButton, BorderLayout.EAST);
 
         myFrame.getContentPane().add(panel, BorderLayout.CENTER);
 
@@ -115,6 +120,7 @@ public class UserInterface implements ActionListener
         });
 
         entryField.addActionListener(this);
+        aHelpButton.addActionListener(this);
 
         myFrame.pack();
         myFrame.setVisible(true);
@@ -126,9 +132,15 @@ public class UserInterface implements ActionListener
      */
     public void actionPerformed(ActionEvent e) 
     {
-        // no need to check the type of action at the moment.
-        // there is only one possible action: text entry
-        processCommand();
+        Object source = e.getSource();
+        if (source == aHelpButton)
+        {
+            engine.interpretCommand("help");
+        }
+        else
+        {
+            processCommand();
+        }
     }
 
     /**
