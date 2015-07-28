@@ -37,7 +37,7 @@ public class Command
      */
     public boolean hasSecondWord()
     {
-        return getSecondWord() != null;
+        return (aSecondWord != null);
     }
     
     /**
@@ -45,6 +45,6 @@ public class Command
      */
     public boolean isUnknown()
     {
-        return getCommandWord() == null;
+        return (aCommandWord == null);
     }
 } // Command

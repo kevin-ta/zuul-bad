@@ -8,20 +8,18 @@ import java.util.Iterator;
 public class Room
 {
     private String aDescription;
-    public Room aNorthExit;
-    public Room aEastExit;
-    public Room aWestExit;
-    public Room aSouthExit;
     private HashMap<String, Room> exits;
+    private String imageName;
     
     /**
      * Constructeur de la classe Game
      * Il permet d'initialiser un objet pièce et la HashMap des sorties possibles
      */
-    public Room(final String pDescription)
+    public Room(final String pDescription, final String image)
     {
         this.aDescription = pDescription;
-        exits = new HashMap<String, Room>();
+        this.exits = new HashMap<String, Room>();
+        this.imageName = image;
     }
 
     /**
@@ -29,7 +27,7 @@ public class Room
      */
     public Room getExit(final String pDirection)
     {
-        return exits.get(pDirection);
+        return this.exits.get(pDirection);
     }
     
     /**
@@ -51,7 +49,7 @@ public class Room
      */
     public void setExit(final String pDirection, final Room pNeighbor)
     {
-        exits.put(pDirection, pNeighbor);
+        this.exits.put(pDirection, pNeighbor);
     }
     
     /**
@@ -61,4 +59,12 @@ public class Room
     {
         return "Vous etes " + this.aDescription + "\n"  + getExitString();
     }
+    
+    /**
+     * Return a string describing the room's image name
+     */
+	public String getImageName()
+	{
+		return this.imageName;
+	}
 } // Room
