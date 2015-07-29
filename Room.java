@@ -80,6 +80,30 @@ public class Room
     }
     
     /**
+     * Remove an item in the list items.
+     */
+    public void removeItem(Item item)
+    {
+        this.items.remove(item);
+    }
+    
+    /**
+     * Find an item in the list items.
+     */
+    public Item findItem(String item)
+    {
+        for( int i=0; i < items.size(); i++)
+        {
+            Item chp = (Item) items.get(i);
+            if (item.equals(chp.getDescription()))
+            {
+                return chp;
+            }
+        }
+        return null;
+    }
+    
+    /**
      * @return all the items present in a list.
      */
     public String getItemString()

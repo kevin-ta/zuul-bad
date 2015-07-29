@@ -104,6 +104,10 @@ public class GameEngine
             goBack(command);
         else if (commandWord.equals("test"))
             test(command);
+        else if (commandWord.equals("take"))
+            take(command);
+        else if (commandWord.equals("drop"))
+            drop(command);
     }
     
     /**
@@ -228,8 +232,57 @@ public class GameEngine
             interpretCommand((String) test.nextLine());
         }
         test.close();
-    } 
+    }
     
+    /**
+     * Take
+     */
+    public void take(Command command)
+    {
+        if(!command.hasSecondWord()) 
+        {
+            gui.println("Take what?\n");
+            return;
+        }     
+
+        String name = command.getSecondWord();
+        Item item = (player.getCurrentRoom()).findItem(name);
+
+        if (item != null)
+        {
+            player.getCurrentRoom().removeItem(item);
+        }     
+        else
+        {
+            gui.println("The item doesn't exist.\n");
+        }
+    }
+    
+    /**
+     * Take
+     */
+    public void drop(Command command)
+    {
+        if(!command.hasSecondWord()) 
+        {
+            gui.println("Drop what?\n");
+            return;
+        }     
+
+        String name = command.getSecondWord();
+        Item item = (player.getCurrentRoom()).findItem(name);
+
+        if (item == null)
+        {
+            Item newItem = new Item(name, 1);
+            player.getCurrentRoom().addItem(newItem);
+        }     
+        else
+        {
+            gui.println("The item already exists.\n");
+        }
+    }
+
     /**
      * Met fin au jeu
      */
