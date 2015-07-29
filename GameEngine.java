@@ -65,6 +65,7 @@ public class GameEngine
         
         vOutside.addItem(new Item("beer", 0.5));
         vOutside.addItem(new Item("cola", 1));
+        vOutside.addItem(new Item("cookie", 0));
         vTheatre.addItem(new Item("juice", 1));
 
         return vOutside;
@@ -97,7 +98,7 @@ public class GameEngine
                 endGame();
         }
         else if (commandWord.equals("eat"))
-            eat();
+            eat(command);
         else if (commandWord.equals("look"))
             look();
         else if (commandWord.equals("back"))
@@ -180,9 +181,30 @@ public class GameEngine
     /**
      * Commande eat
      */
-    private void eat()
+    private void eat(final Command pCommand)
     {
-        gui.println("You have eaten now and you are not hungry any more.\n");
+        if (!pCommand.hasSecondWord())
+        {
+            gui.println("You have eaten now and you are not hungry any more.\n");
+            return;
+        }
+        else if (pCommand.getSecondWord().equals("cookie"))
+        {
+            Item item = player.findItem(pCommand.getSecondWord());
+            if (item != null)
+            {
+                this.player.removeItem(item);
+                this.player.setMaxWeight(10.0);
+                gui.println("You have eaten the magic cookie.\n");
+                gui.println("You have set the maximum weight of your inventory to 10kg.\n");
+                return;
+            }
+            gui.println("I don't understand.\n");
+        }
+        else
+        {
+            gui.println("I don't understand.\n");
+        }
     }
     
     /**
@@ -300,7 +322,7 @@ public class GameEngine
     public void items()
     {
         gui.println(this.player.getItemString());
-        gui.println("You inventory weighs " + this.player.getCurrentWeight() + " kg.\n");
+        gui.println("Your inventory weighs " + this.player.getCurrentWeight() + " kg.\n");
     }
 
     /**
