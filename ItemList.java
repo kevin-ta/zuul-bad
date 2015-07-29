@@ -59,4 +59,17 @@ import java.util.ArrayList;
         }
         return returnString;
     }
+    
+    /**
+     * @return the current weight of a list
+     */
+    public double getCurrentWeight()
+        {
+        double totalWeight = 0.0;
+        for(int i=0; i < items.size(); i++)
+        {
+            totalWeight += (items.get(i)).getWeight();
+        }
+        return totalWeight;
+    }
 }

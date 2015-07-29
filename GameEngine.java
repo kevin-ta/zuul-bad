@@ -108,6 +108,8 @@ public class GameEngine
             take(command);
         else if (commandWord.equals("drop"))
             drop(command);
+        else if (commandWord.equals("items"))
+            items();
     }
     
     /**
@@ -293,6 +295,12 @@ public class GameEngine
         {
             gui.println("The item doesn't exist.\n");
         }
+    }
+    
+    public void items()
+    {
+        gui.println(this.player.getItemString());
+        gui.println("You inventory weighs " + this.player.getCurrentWeight() + " kg.\n");
     }
 
     /**

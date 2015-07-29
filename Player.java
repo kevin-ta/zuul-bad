@@ -17,7 +17,7 @@ public class Player
     {
         this.aName = pName;
         this.inventory = new ItemList();
-        this.aMaxWeight = 1.0;
+        this.aMaxWeight = 2.0;
     }
 
     /**
@@ -82,5 +82,21 @@ public class Player
     public void setMaxWeight(final double pWeight)
     {
         this.aMaxWeight += pWeight;
+    }
+    
+    /**
+     * Accesseur du poids actuelle de l'inventaire
+     */
+    public double getCurrentWeight()
+    {
+        return this.inventory.getCurrentWeight();
+    }
+    
+    /**
+     * Accesseur qui retourne les objets actuels de l'inventaire
+     */
+    public String getItemString()
+    {
+        return this.inventory.getItemString();
     }
 }
