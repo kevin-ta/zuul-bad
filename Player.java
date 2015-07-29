@@ -8,6 +8,7 @@ public class Player
     private String aName;
     private Room aCurrentRoom;
     private ItemList inventory;
+    private double aMaxWeight;
     
     /**
      * Constructor for objects of class Player
@@ -16,6 +17,7 @@ public class Player
     {
         this.aName = pName;
         this.inventory = new ItemList();
+        this.aMaxWeight = 1.0;
     }
 
     /**
@@ -64,5 +66,21 @@ public class Player
     public Item findItem(String item)
     {
         return this.inventory.findItem(item);
+    }
+    
+    /**
+     * Accesseur du poids max de l'inventaire
+     */
+    public double getMaxWeight()
+    {
+        return this.aMaxWeight;
+    }
+    
+     /**
+     * Mutateur du poids max de l'inventaire
+     */
+    public void setMaxWeight(final double pWeight)
+    {
+        this.aMaxWeight += pWeight;
     }
 }

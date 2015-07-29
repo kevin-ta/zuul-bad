@@ -243,15 +243,24 @@ public class GameEngine
         {
             gui.println("Take what?\n");
             return;
-        }     
-
+        }
+        
         String name = command.getSecondWord();
         Item item = (player.getCurrentRoom()).findItem(name);
 
         if (item != null)
         {
-            this.player.getCurrentRoom().removeItem(item);
-            this.player.addItem(item);
+            double weight = item.getWeight();
+            if (this.player.getMaxWeight() - weight >= 0)
+            {
+                this.player.getCurrentRoom().removeItem(item);
+                this.player.addItem(item);
+                this.player.setMaxWeight(-weight);
+            }
+            else
+            {
+                gui.println("You can't take more.\n");
+            }
         }     
         else
         {
@@ -275,9 +284,11 @@ public class GameEngine
 
         if (item != null)
         {
+            double weight = item.getWeight();
             this.player.getCurrentRoom().addItem(item);
             this.player.removeItem(item);
-        }     
+            this.player.setMaxWeight(weight);
+        } 
         else
         {
             gui.println("The item doesn't exist.\n");
