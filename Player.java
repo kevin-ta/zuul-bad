@@ -7,7 +7,7 @@ public class Player
 {
     private String aName;
     private Room aCurrentRoom;
-    private ArrayList<Item> inventory;
+    private ItemList inventory;
     
     /**
      * Constructor for objects of class Player
@@ -15,7 +15,7 @@ public class Player
     public Player(final String pName)
     {
         this.aName = pName;
-        this.inventory = new ArrayList<Item>();
+        this.inventory = new ItemList();
     }
 
     /**
@@ -45,32 +45,24 @@ public class Player
         /**
      * Add an item in the list inventory.
      */
-    public void addInventory(Item item)
+    public void addItem(Item item)
     {
-        this.inventory.add(item);
+        this.inventory.addItem(item);
     }
     
     /**
      * Remove an item in the list inventory.
      */
-    public void removeInventory(Item item)
+    public void removeItem(Item item)
     {
-        this.inventory.remove(item);
+        this.inventory.removeItem(item);
     }
     
     /**
      * Find an item in the list items.
      */
-    public Item findInventory(String item)
+    public Item findItem(String item)
     {
-        for( int i=0; i < inventory.size(); i++)
-        {
-            Item chp = (Item) inventory.get(i);
-            if (item.equals(chp.getDescription()))
-            {
-                return chp;
-            }
-        }
-        return null;
+        return this.inventory.findItem(item);
     }
 }

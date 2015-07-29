@@ -251,7 +251,7 @@ public class GameEngine
         if (item != null)
         {
             this.player.getCurrentRoom().removeItem(item);
-            this.player.addInventory(item);
+            this.player.addItem(item);
         }     
         else
         {
@@ -271,16 +271,16 @@ public class GameEngine
         }     
 
         String name = command.getSecondWord();
-        Item item = player.findInventory(name);
+        Item item = player.findItem(name);
 
         if (item != null)
         {
             this.player.getCurrentRoom().addItem(item);
-            this.player.removeInventory(item);
+            this.player.removeItem(item);
         }     
         else
         {
-            gui.println("The item doesn't exists.\n");
+            gui.println("The item doesn't exist.\n");
         }
     }
 

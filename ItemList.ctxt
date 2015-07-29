@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ItemList()
+comment0.text=\r\n\ Constructor\ of\ class\ ItemList.\r\n
+comment1.params=item
+comment1.target=void\ addItem(Item)
+comment1.text=\r\n\ Add\ an\ item\ in\ a\ list.\r\n
+comment2.params=item
+comment2.target=void\ removeItem(Item)
+comment2.text=\r\n\ Remove\ an\ item\ in\ a\ list.\r\n
+comment3.params=item
+comment3.target=Item\ findItem(java.lang.String)
+comment3.text=\r\n\ Find\ an\ item\ in\ a\ list\ with\ its\ name.\r\n
+comment4.params=
+comment4.target=java.lang.String\ getItemString()
+comment4.text=\r\n\ @return\ all\ the\ items\ present\ in\ a\ list.\r\n
+numComments=5

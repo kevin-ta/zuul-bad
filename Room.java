@@ -11,7 +11,7 @@ public class Room
     private String aDescription;
     private HashMap<String, Room> exits;
     private String imageName;
-    private ArrayList<Item> items;
+    private ItemList items;
     
     /**
      * Constructeur de la classe Game
@@ -22,7 +22,7 @@ public class Room
         this.aDescription = pDescription;
         this.exits = new HashMap<String, Room>();
         this.imageName = image;
-        this.items = new ArrayList<Item>();
+        this.items = new ItemList();
     }
 
     /**
@@ -60,7 +60,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "Vous etes " + this.aDescription + "\n"  + getExitString() + "\n" + getItemString();
+        return "Vous etes " + this.aDescription + "\n"  + getExitString() + "\n" + items.getItemString();
     }
     
     /**
@@ -76,7 +76,7 @@ public class Room
      */
     public void addItem(Item item)
     {
-        this.items.add(item);
+        this.items.addItem(item);
     }
     
     /**
@@ -84,7 +84,7 @@ public class Room
      */
     public void removeItem(Item item)
     {
-        this.items.remove(item);
+        this.items.removeItem(item);
     }
     
     /**
@@ -92,15 +92,7 @@ public class Room
      */
     public Item findItem(String item)
     {
-        for( int i=0; i < items.size(); i++)
-        {
-            Item chp = (Item) items.get(i);
-            if (item.equals(chp.getDescription()))
-            {
-                return chp;
-            }
-        }
-        return null;
+        return this.items.findItem(item);
     }
     
     /**
@@ -108,11 +100,6 @@ public class Room
      */
     public String getItemString()
     {
-        String returnString = "Items:";
-        for( int i=0; i < items.size(); i++)
-        {
-            returnString += (" " + ((Item) items.get(i)).getLongDescription());
-        }
-        return returnString;
+        return this.items.getItemString();
     }
 } // Room
