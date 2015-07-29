@@ -1,6 +1,8 @@
 help
 look
 eat
+take cookie
+eat cookie
 go south
 go east
 go west
