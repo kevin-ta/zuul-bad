@@ -6,7 +6,33 @@
  */
 public enum CommandWord
 {
-    // A value for each command word, plus one for unrecognised
-    // commands.
-    GO, QUIT, HELP, LOOK, EAT, BACK, TEST, TAKE, DROP, ITEMS, UNKNOWN;
+    GO("go"),
+    QUIT("quit"),
+    HELP("help"),
+    LOOK("look"),
+    EAT("eat"),
+    BACK("back"),
+    TEST("test"),
+    TAKE("take"),
+    DROP("drop"),
+    ITEMS("items"),
+    UNKNOWN("?");
+    private String commandString;
+    
+    /**
+     * Initialise with the corresponding command word.
+     * @param commandWord The command string.
+     */
+    CommandWord(String commandString)
+    {
+        this.commandString = commandString;
+    }
+    
+    /**
+     * @return The command word as a string.
+     */
+    public String toString()
+    {
+        return commandString;
+    }
 }
