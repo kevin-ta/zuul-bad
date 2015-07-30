@@ -22,7 +22,9 @@ public class CommandWords
     {
         validCommands = new HashMap<String, CommandWord>();
         validCommands.put("go", CommandWord.GO);
+        validCommands.put("aller", CommandWord.GO);
         validCommands.put("quit", CommandWord.QUIT);
+        validCommands.put("quitter", CommandWord.QUIT);
         validCommands.put("help", CommandWord.HELP);
         validCommands.put("look", CommandWord.LOOK);
         validCommands.put("eat", CommandWord.EAT);
