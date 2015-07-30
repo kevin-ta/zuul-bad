@@ -3,14 +3,14 @@
  */
 public class Command
 {
-    private String aCommandWord;
+    private CommandWord aCommandWord;
     private String aSecondWord;
     
     /**
      * Constructeur de la classe Command
      * Une commande est composéee d'un premier mot et éventuellement d'un second mot
      */
-    public Command(final String pCommandWord, final String pSecondWord)
+    public Command(final CommandWord pCommandWord, final String pSecondWord)
     {
         this.aCommandWord = pCommandWord;
         this.aSecondWord  = pSecondWord;
@@ -19,7 +19,7 @@ public class Command
     /**
      * Accesseur qui retourne le premier mot de la commande
      */
-    public String getCommandWord()
+    public CommandWord getCommandWord()
     {
         return this.aCommandWord;
     }
@@ -45,6 +45,6 @@ public class Command
      */
     public boolean isUnknown()
     {
-        return (aCommandWord == null);
+        return (aCommandWord == CommandWord.UNKNOWN);
     }
 } // Command

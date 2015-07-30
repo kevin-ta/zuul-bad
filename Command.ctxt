@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.params=pCommandWord\ pSecondWord
-comment0.target=Command(java.lang.String,\ java.lang.String)
+comment0.target=Command(CommandWord,\ java.lang.String)
 comment0.text=\r\n\ Constructeur\ de\ la\ classe\ Command\r\n\ Une\ commande\ est\ compos\u00E9ee\ d'un\ premier\ mot\ et\ \u00E9ventuellement\ d'un\ second\ mot\r\n
 comment1.params=
-comment1.target=java.lang.String\ getCommandWord()
+comment1.target=CommandWord\ getCommandWord()
 comment1.text=\r\n\ Accesseur\ qui\ retourne\ le\ premier\ mot\ de\ la\ commande\r\n
 comment2.params=
 comment2.target=java.lang.String\ getSecondWord()
