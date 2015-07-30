@@ -26,6 +26,7 @@ public class CommandWords
         validCommands.put("quit", CommandWord.QUIT);
         validCommands.put("quitter", CommandWord.QUIT);
         validCommands.put("help", CommandWord.HELP);
+        validCommands.put("aider", CommandWord.HELP);
         validCommands.put("look", CommandWord.LOOK);
         validCommands.put("eat", CommandWord.EAT);
         validCommands.put("back", CommandWord.BACK);
