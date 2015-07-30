@@ -85,32 +85,34 @@ public class GameEngine
             gui.println("I don't know what you mean...");
             return;
         }
-
         CommandWord commandWord = command.getCommandWord();
-        if (commandWord == CommandWord.HELP)
-            printHelp();
-        else if (commandWord == CommandWord.GO)
-            goRoom(command);
-        else if (commandWord == CommandWord.QUIT) {
+        switch (commandWord)
+        {
+            case HELP : printHelp();
+            break;
+            case GO : goRoom(command);
+            break;
+            case QUIT :
             if(command.hasSecondWord())
                 gui.println("Quit what?");
             else
                 endGame();
+            break;
+            case EAT : eat(command);
+            break;
+            case LOOK : look();
+            break;
+            case BACK : goBack(command);
+            break;
+            case TEST : test(command);;
+            break;
+            case TAKE : take(command);
+            break;
+            case DROP : drop(command);
+            break;
+            case ITEMS : items();
+            break;
         }
-        else if (commandWord == CommandWord.EAT)
-            eat(command);
-        else if (commandWord == CommandWord.LOOK)
-            look();
-        else if (commandWord == CommandWord.BACK)
-            goBack(command);
-        else if (commandWord == CommandWord.TEST)
-            test(command);
-        else if (commandWord == CommandWord.TAKE)
-            take(command);
-        else if (commandWord == CommandWord.DROP)
-            drop(command);
-        else if (commandWord == CommandWord.ITEMS)
-            items();
     }
     
     /**
