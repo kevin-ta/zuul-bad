@@ -8,7 +8,7 @@ public enum CommandWord
 {
     GO("go"),
     QUIT("quit"),
-    HELP("help"),
+    HELP("aider"),
     LOOK("look"),
     EAT("eat"),
     BACK("back"),
