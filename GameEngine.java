@@ -12,6 +12,8 @@ public class GameEngine
     private UserInterface gui;
     public static Stack<Room> roomHistory;
     private Player player;
+    private int aCurrentTime;
+    private int aTimeLimit;
 
     /**
      * Constructeur de la classe Game.
@@ -24,6 +26,8 @@ public class GameEngine
         roomHistory = new Stack<Room>();
         Room startRoom = createRooms();
         player.changeRoom(startRoom);
+        this.aTimeLimit = 10;
+        this.aCurrentTime = 0;
     }
     
     /**
@@ -80,38 +84,46 @@ public class GameEngine
     {
         gui.println(commandLine);
         Command command = aParser.getCommand(commandLine);
-
-        if(command.isUnknown()) {
-            gui.println("I don't know what you mean...");
-            return;
-        }
-        CommandWord commandWord = command.getCommandWord();
-        switch (commandWord)
+        if (timer())
         {
-            case HELP : printHelp();
-            break;
-            case GO : goRoom(command);
-            break;
-            case QUIT :
-            if(command.hasSecondWord())
-                gui.println("Quit what?");
-            else
-                endGame();
-            break;
-            case EAT : eat(command);
-            break;
-            case LOOK : look();
-            break;
-            case BACK : goBack(command);
-            break;
-            case TEST : test(command);;
-            break;
-            case TAKE : take(command);
-            break;
-            case DROP : drop(command);
-            break;
-            case ITEMS : items();
-            break;
+            gui.println("There is no time left, game over..");
+            gui.enable(false);
+        }
+        else
+        {
+            if(command.isUnknown()) {
+                gui.println("I don't know what you mean...");
+                return;
+            }
+            CommandWord commandWord = command.getCommandWord();
+            switch (commandWord)
+            {
+                case HELP : printHelp();
+                break;
+                case GO : goRoom(command);
+                break;
+                case QUIT :
+                if(command.hasSecondWord())
+                    gui.println("Quit what?");
+                else
+                    endGame();
+                break;
+                case EAT : eat(command);
+                break;
+                case LOOK : look();
+                break;
+                case BACK : goBack(command);
+                break;
+                case TEST : test(command);;
+                break;
+                case TAKE : take(command);
+                break;
+                case DROP : drop(command);
+                break;
+                case ITEMS : items();
+                break;
+            }
+            this.aCurrentTime = this.aCurrentTime + 1;
         }
     }
     
@@ -334,5 +346,13 @@ public class GameEngine
     {
         gui.println("Thank you for playing.  Good bye.");
         gui.enable(false);
+    }
+    
+    public boolean timer()
+    {
+        if (this.aCurrentTime == this.aTimeLimit)
+            return true;
+        else 
+            return false;
     }
 } // Game
