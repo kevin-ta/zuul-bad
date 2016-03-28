@@ -2,17 +2,20 @@ import java.util.Stack;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
 /**
  * Classe principale du jeu, elle permet de démarrer Zuul.
  */
-public class GameEngine
+public class GameEngine implements ActionListener
 {
     private Parser aParser;
     private UserInterface gui;
     public static Stack<Room> roomHistory;
     private Player player;
-    private int aCurrentTime;
+    private Timer timer;
     private int aTimeLimit;
 
     /**
@@ -26,8 +29,8 @@ public class GameEngine
         roomHistory = new Stack<Room>();
         Room startRoom = createRooms();
         player.changeRoom(startRoom);
-        this.aTimeLimit = 10;
-        this.aCurrentTime = 0;
+        timer = new Timer(300000, this);
+        timer.start();
     }
     
     /**
@@ -84,46 +87,37 @@ public class GameEngine
     {
         gui.println(commandLine);
         Command command = aParser.getCommand(commandLine);
-        if (timer())
-        {
-            gui.println("There is no time left, game over..");
-            gui.enable(false);
+        if(command.isUnknown()) {
+            gui.println("I don't know what you mean...");
+            return;
         }
-        else
+        CommandWord commandWord = command.getCommandWord();
+        switch (commandWord)
         {
-            if(command.isUnknown()) {
-                gui.println("I don't know what you mean...");
-                return;
-            }
-            CommandWord commandWord = command.getCommandWord();
-            switch (commandWord)
-            {
-                case HELP : printHelp();
-                break;
-                case GO : goRoom(command);
-                break;
-                case QUIT :
-                if(command.hasSecondWord())
-                    gui.println("Quit what?");
-                else
-                    endGame();
-                break;
-                case EAT : eat(command);
-                break;
-                case LOOK : look();
-                break;
-                case BACK : goBack(command);
-                break;
-                case TEST : test(command);;
-                break;
-                case TAKE : take(command);
-                break;
-                case DROP : drop(command);
-                break;
-                case ITEMS : items();
-                break;
-            }
-            this.aCurrentTime = this.aCurrentTime + 1;
+            case HELP : printHelp();
+            break;
+            case GO : goRoom(command);
+            break;
+            case QUIT :
+            if(command.hasSecondWord())
+                gui.println("Quit what?");
+            else
+                endGame();
+            break;
+            case EAT : eat(command);
+            break;
+            case LOOK : look();
+            break;
+            case BACK : goBack(command);
+            break;
+            case TEST : test(command);;
+            break;
+            case TAKE : take(command);
+            break;
+            case DROP : drop(command);
+            break;
+            case ITEMS : items();
+            break;
         }
     }
     
@@ -348,11 +342,15 @@ public class GameEngine
         gui.enable(false);
     }
     
-    public boolean timer()
+    public void actionPerformed(ActionEvent e)
     {
-        if (this.aCurrentTime == this.aTimeLimit)
-            return true;
-        else 
-            return false;
-    }
+    	this.aTimeLimit--;
+    	if (aTimeLimit <= 0)
+    	{
+    		gui.println("There is no time left, game over..");
+            gui.enable(false);
+    		endGame();
+    		timer.stop();
+    	}
+	}
 } // Game
