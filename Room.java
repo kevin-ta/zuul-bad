@@ -64,6 +64,23 @@ public class Room
     }
     
     /**
+     * Accesseur qui retourne la direction de la pièce
+     */
+    public String getDirection(final Room pRoom)
+    {
+        String direction = null;
+        for (String key : exits.keySet())
+        {
+            if (pRoom.equals(exits.get(key)))
+            {
+                direction = key;
+                break;
+            }
+        }
+        return direction;
+    }
+    
+    /**
      * Return a string describing the room's image name
      */
     public String getImageName()

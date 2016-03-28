@@ -60,7 +60,7 @@ public class GameEngine implements ActionListener
         
         vTheatre.setExit("west", vOutside);
         
-        vPub.setExit("east", vOutside);
+        vPub.setExit("south", vLab);
         
         vLab.setExit("north", vOutside);
         vLab.setExit("east", vOffice);
@@ -231,6 +231,13 @@ public class GameEngine implements ActionListener
         }
         else
         {
+            Room vPreviousRoom = roomHistory.peek();
+            String direction = player.getCurrentRoom().getDirection(vPreviousRoom);
+            if(direction == null)
+            {
+                gui.println("You can't back, you are trapped inside");
+                return;
+            }
             player.changeRoom(roomHistory.pop());
             printLocationInfo();
             if(player.getCurrentRoom().getImageName() != null)
