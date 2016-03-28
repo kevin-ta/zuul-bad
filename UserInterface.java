@@ -29,7 +29,7 @@ public class UserInterface implements ActionListener
     private JTextField entryField;
     private JTextArea log;
     private JLabel image;
-    private JButton aHelpButton;
+    private JButton aHelpButton, aLookbutton, aBackbutton, aItemsbutton, aNorthbutton, aSouthbutton, aEastbutton, aWestbutton; 
 
     /**
      * Construct a UserInterface. As a parameter, a Game Engine
@@ -96,21 +96,43 @@ public class UserInterface implements ActionListener
         entryField = new JTextField(34);
         
         aHelpButton = new JButton("Help");
-
+        aBackbutton = new JButton("Back");
+        aLookbutton = new JButton("Look");
+        aNorthbutton = new JButton("North");
+        aSouthbutton = new JButton("South");
+        aEastbutton = new JButton("East");
+        aWestbutton = new JButton("West");
+        aItemsbutton = new JButton("Items");
+        
         log = new JTextArea();
         log.setEditable(false);
         JScrollPane listScroller = new JScrollPane(log);
-        listScroller.setPreferredSize(new Dimension(200, 200));
-        listScroller.setMinimumSize(new Dimension(100,100));
+        listScroller.setPreferredSize(new Dimension(400, 200));
+        listScroller.setMinimumSize(new Dimension(400,100));
 
         JPanel panel = new JPanel();
+        JPanel right = new JPanel();
+        JPanel left = new JPanel();
         image = new JLabel();
 
         panel.setLayout(new BorderLayout());
         panel.add(image, BorderLayout.NORTH);
         panel.add(listScroller, BorderLayout.CENTER);
         panel.add(entryField, BorderLayout.SOUTH);
-        panel.add(aHelpButton, BorderLayout.EAST);
+        panel.add(right, BorderLayout.EAST);
+        panel.add(left, BorderLayout.WEST);
+        
+        right.setLayout(new BorderLayout());
+        right.add(aNorthbutton, BorderLayout.NORTH);
+        right.add(aSouthbutton, BorderLayout.SOUTH);
+        right.add(aEastbutton, BorderLayout.EAST);
+        right.add(aWestbutton, BorderLayout.WEST);
+        
+        left.setLayout(new BorderLayout());
+        left.add(aLookbutton, BorderLayout.NORTH);
+        left.add(aBackbutton, BorderLayout.SOUTH);
+        left.add(aItemsbutton, BorderLayout.EAST);
+        left.add(aHelpButton, BorderLayout.WEST);
 
         myFrame.getContentPane().add(panel, BorderLayout.CENTER);
 
@@ -121,6 +143,13 @@ public class UserInterface implements ActionListener
 
         entryField.addActionListener(this);
         aHelpButton.addActionListener(this);
+        aLookbutton.addActionListener(this);
+        aNorthbutton.addActionListener(this);
+        aSouthbutton.addActionListener(this);
+        aEastbutton.addActionListener(this);
+        aWestbutton.addActionListener(this);
+        aBackbutton.addActionListener(this);
+        aItemsbutton.addActionListener(this);
 
         myFrame.pack();
         myFrame.setVisible(true);
@@ -133,14 +162,15 @@ public class UserInterface implements ActionListener
     public void actionPerformed(ActionEvent e) 
     {
         Object source = e.getSource();
-        if (source == aHelpButton)
-        {
-            engine.interpretCommand("help");
-        }
-        else
-        {
-            processCommand();
-        }
+        if (source == aHelpButton) engine.interpretCommand("aider");
+        else if (source == aLookbutton) engine.interpretCommand("look");
+        else if (source == aBackbutton) engine.interpretCommand("back");
+        else if (source == aItemsbutton) engine.interpretCommand("items");
+        else if (source == aNorthbutton) engine.interpretCommand("go north");
+        else if (source == aSouthbutton) engine.interpretCommand("go south");
+        else if (source == aEastbutton) engine.interpretCommand("go east");
+        else if (source == aWestbutton) engine.interpretCommand("go west");
+        else processCommand();
     }
 
     /**
