@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
+import java.util.ArrayList;
 
 /**
  * Classe principale du jeu, elle permet de démarrer Zuul.
@@ -17,7 +18,8 @@ public class GameEngine implements ActionListener
     private Player player;
     private Timer timer;
     private int aTimeLimit;
-
+    public static ArrayList<Room> rooms;
+    
     /**
      * Constructeur de la classe Game.
      * Il permet d'initialiser le jeu et d'afficher un message de bienvenue
@@ -27,6 +29,7 @@ public class GameEngine implements ActionListener
         this.player = new Player("BDE");
         this.aParser = new Parser();
         roomHistory = new Stack<Room>();
+        rooms = new ArrayList<Room>();
         Room startRoom = createRooms();
         player.changeRoom(startRoom);
         timer = new Timer(300000, this);
@@ -48,7 +51,7 @@ public class GameEngine implements ActionListener
     private Room createRooms()
     {
         Room vOutside = new Room("outside the main entrance of the university", "images/outside.gif");
-        Room vTheatre = new Room("in a lecture theatre", "images/courtyard.gif");
+        Room vTheatre = new TransporterRoom("in a lecture theatre", "images/courtyard.gif");
         Room vPub     = new Room("in the campus pub", "images/dungeon.gif");
         Room vLab     = new Room("in a computing lab", "images/hallway.gif");
         Room vServer  = new Room("in the server room", "images/stairs.gif");
@@ -76,8 +79,22 @@ public class GameEngine implements ActionListener
         vTheatre.addItem(new Item("juice", 1));
         Beamer beamer = new Beamer("beamer", 1);
         vOutside.addItem(beamer);
+        
+        rooms.add(vOutside);
+        rooms.add(vTheatre);
+        rooms.add(vPub);
+        rooms.add(vLab);
+        rooms.add(vOffice);
 
         return vOutside;
+    }
+    
+    /**
+     * Accesseur de la liste des pièces
+     */
+    public static ArrayList<Room> getRooms()
+    {
+        return GameEngine.rooms;
     }
     
     /**
