@@ -141,6 +141,8 @@ public class GameEngine implements ActionListener
             break;
             case TELEPORT: teleport();
             break;
+            case ALEA: alea(command);
+	        break;
         }
     }
     
@@ -411,6 +413,32 @@ public class GameEngine implements ActionListener
 			gui.println("You need to charge to beamer.");
         }
     }
+	
+    /**
+     * Alea
+     */
+    public void alea(Command command)
+	{
+    	if(!command.hasSecondWord())
+		{
+        	gui.println("Random enabled.");
+        	RoomRandomizer.setSeed(null);
+        }
+        else
+        {
+        	try
+			{
+        		RoomRandomizer.setSeed(Long.parseLong(command.getSecondWord(), 10));
+        	}
+			catch (NumberFormatException E)
+        	{
+        		gui.println("Wrong seed.");
+        		return;
+        	}
+        	
+    		gui.println("You changed the seed.");        		
+        }
+	}
     
     public void items()
     {

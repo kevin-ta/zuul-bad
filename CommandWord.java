@@ -18,6 +18,7 @@ public enum CommandWord
     ITEMS("items"),
     CHARGE("charge"),
     TELEPORT("teleport"),
+	ALEA("alea"),
     UNKNOWN("?");
     private String commandString;
     
