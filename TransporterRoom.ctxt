@@ -1,10 +1,11 @@
 #BlueJ class context
 comment0.params=pDescription\ pImage
 comment0.target=TransporterRoom(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ RoomRandomizer\r\n\ @param\ pDescription\ Le\ nom\ de\ la\ piece\r\n\ @param\ pImage\ Le\ nom\ du\ fichier\ image\r\n
 comment1.params=pDirection
 comment1.target=Room\ getExit(java.lang.String)
-comment1.text=\r\n\ Accesseur\ qui\ retourne\ une\ sortie\ al\u00E9atoire\r\n
+comment1.text=\r\n\ Fonction\ permettant\ de\ retourner\ une\ sortie\ aleatoire\r\n\ @param\ pDirection\ Une\ direction\r\n\ @return\ Un\ objet\ Room\ aleatoire\r\n
 comment2.params=
 comment2.target=Room\ findRandomRoom()
-comment2.text=\r\n\ Retourne\ une\ pi\u00E8ce\ al\u00E9atoire\r\n
+comment2.text=\r\n\ Fonction\ permettant\ de\ retourner\ une\ piece\ aleatoire\r\n\ @return\ Un\ objet\ Room\ aleatoire\r\n
 numComments=3

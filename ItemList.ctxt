@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=ItemList()
-comment0.text=\r\n\ Constructor\ of\ class\ ItemList.\r\n
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ ItemList\r\n
 comment1.params=item
 comment1.target=void\ addItem(Item)
-comment1.text=\r\n\ Add\ an\ item\ in\ a\ list.\r\n
+comment1.text=\r\n\ Procedure\ permettant\ d'ajouter\ un\ item\ dans\ l'inventaire\r\n\ @param\ item\ Un\ objet\ Item\r\n
 comment2.params=item
 comment2.target=void\ removeItem(Item)
-comment2.text=\r\n\ Remove\ an\ item\ in\ a\ list.\r\n
+comment2.text=\r\n\ Procedure\ permettant\ de\ supprimer\ un\ item\ de\ l'inventaire\r\n\ @param\ item\ Un\ objet\ Item\r\n
 comment3.params=item
 comment3.target=Item\ findItem(java.lang.String)
-comment3.text=\r\n\ Find\ an\ item\ in\ a\ list\ with\ its\ name.\r\n
+comment3.text=\r\n\ Fonction\ permettant\ de\ retrouver\ un\ item\ dans\ l'inventaire\r\n\ @param\ item\ Un\ objet\ Item\r\n\ @return\ L'objet\ Item\ correspondant\ s'il\ existe\ dans\ l'inventaire\ sinon\ null\r\n
 comment4.params=
 comment4.target=java.lang.String\ getItemString()
-comment4.text=\r\n\ @return\ all\ the\ items\ present\ in\ a\ list.\r\n
+comment4.text=\r\n\ Fonction\ retournant\ une\ chaine\ de\ caracteres\ contenant\ tous\ les\ items\ de\ l'inventaire\r\n\ @return\ Une\ chaine\ de\ caracteres\ contenant\ tous\ les\ items\ de\ l'inventaire\r\n
 comment5.params=
 comment5.target=double\ getCurrentWeight()
-comment5.text=\r\n\ @return\ the\ current\ weight\ of\ a\ list\r\n
+comment5.text=\r\n\ Fonction\ retournant\ le\ poids\ courant\ de\ l'inventaire\r\n\ @return\ le\ poids\ courant\ de\ l'inventaire\r\n
 numComments=6

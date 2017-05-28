@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=pDescription\ pWeight
 comment0.target=Item(java.lang.String,\ double)
-comment0.text=\r\n\ Constructeur\ de\ la\ classe\ item\r\n
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ item\r\n\ @param\ pDescription\ Le\ nom\ de\ l'objet\ Item\r\n\ @param\ pWeight\ Le\ poids\ de\ l'objet\ Item\r\n
 comment1.params=
 comment1.target=java.lang.String\ getDescription()
-comment1.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\r\n
+comment1.text=\r\n\ Accesseur\ permettant\ d'acceder\ au\ nom\ de\ l'item\r\n\ @return\ Le\ nom\ de\ l'item\r\n
 comment2.params=pDescription
 comment2.target=void\ setDescription(java.lang.String)
-comment2.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\r\n
+comment2.text=\r\n\ Mutateur\ permettant\ de\ modifier\ le\ nom\ de\ l'item\r\n\ @param\ pDescription\ Le\ nom\ de\ l'item\r\n
 comment3.params=
 comment3.target=double\ getWeight()
-comment3.text=\r\n\ Accesseur\ pour\ avoir\ le\ poids\ de\ l'item\r\n
+comment3.text=\r\n\ Accesseur\ permettant\ d'acceder\ au\ poids\ de\ l'item\r\n\ @return\ Le\ poids\ de\ l'item\r\n
 comment4.params=pWeight
 comment4.target=void\ setWeight(double)
-comment4.text=\r\n\ Mutateur\ pour\ d\u00E9finir\ le\ poids\ de\ l'item\r\n
+comment4.text=\r\n\ Mutateur\ permettant\ de\ modifier\ le\ poids\ de\ l'item\r\n\ @param\ pWeight\ Le\ poids\ de\ l'item\r\n
 comment5.params=
 comment5.target=java.lang.String\ getLongDescription()
-comment5.text=\r\n\ Accesseur\ pour\ avoir\ la\ description\ de\ l'item\ et\ son\ poids\r\n
+comment5.text=\r\n\ Fonction\ retournant\ une\ chaine\ de\ caracteres\ contenant\ le\ nom\ de\ l'item\ et\ son\ poids\r\n\ @return\ Une\ chaine\ de\ caracteres\ contenant\ le\ nom\ de\ l'item\ et\ son\ poids\r\n
 numComments=6

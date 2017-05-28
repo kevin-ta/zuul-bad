@@ -6,29 +6,31 @@
  */
 public enum CommandWord
 {
-    GO("go"),
-    QUIT("quit"),
-    HELP("aider"),
-    LOOK("look"),
-    EAT("eat"),
-    BACK("back"),
-    TEST("test"),
-    TAKE("take"),
-    DROP("drop"),
-    ITEMS("items"),
-    CHARGE("charge"),
-    TELEPORT("teleport"),
-	ALEA("alea"),
-    UNKNOWN("?");
+    GO("go", new GoCommand()),
+    QUIT("quit", new QuitCommand()),
+    HELP("aider", new HelpCommand()),
+    LOOK("look", new LookCommand()),
+    EAT("eat", new EatCommand()),
+    BACK("back", new BackCommand()),
+    TEST("test", new TestCommand()),
+    TAKE("take", new TakeCommand()),
+    DROP("drop", new DropCommand()),
+    ITEMS("items", new ItemsCommand()),
+    CHARGE("charge", new ChargeCommand()),
+    TELEPORT("teleport", new TeleportCommand()),
+	ALEA("alea", new AleaCommand()),
+    UNKNOWN("?", null);
     private String commandString;
+    private Command command;
     
     /**
      * Initialise with the corresponding command word.
      * @param commandString The command string.
      */
-    CommandWord(String commandString)
+    CommandWord(String commandString, Command pCommand)
     {
         this.commandString = commandString;
+        this.command = pCommand;
     }
     
     /**
@@ -38,5 +40,15 @@ public enum CommandWord
     public String toString()
     {
         return commandString;
+    }
+    
+    /**
+     * Gets the command
+     *
+     * @return The command
+     */
+    public Command getCommand()
+    {
+        return this.command;
     }
 }

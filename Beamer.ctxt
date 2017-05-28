@@ -1,13 +1,17 @@
 #BlueJ class context
 comment0.params=pDescription\ pWeight
 comment0.target=Beamer(java.lang.String,\ double)
-comment0.text=\r\n\ Constructeur\ de\ la\ classe\ Beamer\r\n
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ Beamer\r\n\ @param\ pDescription\ Le\ nom\ de\ l'objet\ beamer\r\n\ @param\ pWeight\ Le\ poids\ de\ l'objet\ beamer\r\n
 comment1.params=
 comment1.target=Room\ getRoom()
+comment1.text=\r\n\ Accesseur\ permettant\ d'acceder\ a\ la\ piece\ sauvegardee\r\n\ @return\ Un\ objet\ Room\r\n
 comment2.params=pRoom
 comment2.target=void\ setRoom(Room)
+comment2.text=\r\n\ Mutateur\ permettant\ de\ modifier\ la\ piece\ sauvegarde\r\n\ @param\ pRoom\ La\ piece\ a\ sauvegarder\r\n
 comment3.params=
 comment3.target=boolean\ getCharged()
+comment3.text=\r\n\ Accesseur\ permettant\ de\ conna\u00EEtre\ l'etat\ du\ beamer\r\n\ @return\ True\ si\ le\ beamer\ est\ charge\ sinon\ false\r\n
 comment4.params=pCharged
 comment4.target=void\ setCharged(boolean)
+comment4.text=\r\n\ Mutateur\ permettant\ de\ modifier\ l'etat\ du\ beamer\r\n\ @param\ pCharged\ Un\ boolean\r\n
 numComments=5

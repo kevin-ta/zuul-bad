@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=pRooms
 comment0.target=RoomRandomizer(java.util.ArrayList)
-comment0.text=\r\n\ Constructeur\ de\ la\ classe\ RoomRandomizer\r\n
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ RoomRandomizer\r\n\ @param\ pRooms\ Une\ ArrayList\ contenant\ la\ liste\ des\ pieces\r\n
 comment1.params=
 comment1.target=Room\ nextRoom()
-comment1.text=\r\n\ Retourne\ une\ pi\u00E8ce\ al\u00E9atoire\r\n
+comment1.text=\r\n\ Fonction\ retournant\ une\ piece\ aleatoire\r\n\ @return\ Un\ objet\ Room\ aleatoire\r\n
 comment2.params=pSeed
 comment2.target=void\ setSeed(java.lang.Long)
-comment2.text=\r\n\ Mutateur\ pour\ d\u00E9finir\ le\ seed\r\n
+comment2.text=\r\n\ Mutateur\ permettant\ de\ definir\ le\ seed\r\n\ @param\ pSeed\ Un\ seed\r\n
 numComments=3

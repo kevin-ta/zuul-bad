@@ -67,4 +67,15 @@ public class CommandWords
             return CommandWord.UNKNOWN;
         }
     }
+    
+    /**
+     * Gets the command.
+     *
+     * @param pCommandWord The command word
+     * @return The command
+     */
+    public Command get(final String pCommandWord)
+    {
+        return this.getCommandWord(pCommandWord).getCommand();
+    }
 }

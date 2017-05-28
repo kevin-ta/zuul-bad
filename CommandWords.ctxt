@@ -1,14 +1,17 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CommandWords()
-comment0.text=\r\n\ Constructeur\ par\ defaut\r\n
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ CommandWords\r\n
 comment1.params=pString
 comment1.target=boolean\ isCommand(java.lang.String)
-comment1.text=\r\n\ Verifie\ si\ une\ String\ donnee\ fait\ partie\ des\ commandes\ valides.\ \r\n\ @param\ pString\ la\ String\ a\ tester\r\n\ @return\ true\ si\ pString\ est\ une\ comande\ valide,\ false\ sinon\r\n
+comment1.text=\r\n\ Verifie\ si\ une\ chaine\ de\ caractere\ donnee\ fait\ partie\ des\ commandes\ valides.\ \r\n\ @param\ pString\ la\ String\ a\ tester\r\n\ @return\ true\ si\ pString\ est\ une\ commande\ valide,\ false\ sinon\r\n
 comment2.params=
 comment2.target=java.lang.String\ getCommandList()
-comment2.text=\r\n\ Affiche\ tous\ les\ commandes\ valides\r\n
+comment2.text=\r\n\ Affiche\ tous\ les\ commandes\ valides\r\n\ @return\ Une\ chaine\ de\ caractere\ contenant\ la\ liste\ des\ commandes\r\n
 comment3.params=commandWord
 comment3.target=CommandWord\ getCommandWord(java.lang.String)
 comment3.text=\r\n\ Find\ the\ CommandWord\ associated\ with\ a\ command\ word.\r\n\ @param\ commandWord\ The\ word\ to\ look\ up.\r\n\ @return\ The\ CommandWord\ correspondng\ to\ commandWord,\ or\ UNKNOWN\r\n\ \ \ \ \ \ \ \ \ if\ it\ is\ not\ a\ valid\ command\ word.\r\n
-numComments=4
+comment4.params=pCommandWord
+comment4.target=Command\ get(java.lang.String)
+comment4.text=\r\n\ Gets\ the\ command.\r\n\r\n\ @param\ pCommandWord\ The\ command\ word\r\n\ @return\ The\ command\r\n
+numComments=5
