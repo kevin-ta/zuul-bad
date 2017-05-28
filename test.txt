@@ -3,9 +3,13 @@ look
 eat
 take cookie
 eat cookie
+take beamer
+charge
 go south
 go east
 go west
 back
 back
 back
+go south
+teleport
