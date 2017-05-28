@@ -16,6 +16,8 @@ public enum CommandWord
     TAKE("take"),
     DROP("drop"),
     ITEMS("items"),
+    CHARGE("charge"),
+    TELEPORT("teleport"),
     UNKNOWN("?");
     private String commandString;
     

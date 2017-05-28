@@ -74,6 +74,8 @@ public class GameEngine implements ActionListener
         vOutside.addItem(new Item("cola", 1));
         vOutside.addItem(new Item("cookie", 0));
         vTheatre.addItem(new Item("juice", 1));
+        Beamer beamer = new Beamer("beamer", 1);
+        vOutside.addItem(beamer);
 
         return vOutside;
     }
@@ -117,6 +119,10 @@ public class GameEngine implements ActionListener
             case DROP : drop(command);
             break;
             case ITEMS : items();
+            break;
+            case CHARGE: charge();
+            break;
+            case TELEPORT: teleport();
             break;
         }
     }
@@ -334,6 +340,61 @@ public class GameEngine implements ActionListener
         }
     }
     
+     /**
+     * Charge
+     */
+    public void charge()
+    {
+        if(player.findItem("beamer") == null)
+		{
+			gui.println("You need the beamer to charge.");
+			return;
+		}
+		
+		Beamer vBeamer = (Beamer) player.findItem("beamer");
+        gui.println("You save the current room with your beamer.");
+		vBeamer.setCharged(true);
+		vBeamer.setRoom(player.getCurrentRoom());
+    }
+    
+    /**
+     * Teleport
+     */
+    public void teleport()
+    {
+		if(player.findItem("beamer") == null)
+		{
+			gui.println("You need the beamer to teleport.");
+			return;
+		}
+		
+		Beamer vBeamer = (Beamer) player.findItem("beamer");
+	
+		if (vBeamer.getCharged())
+		{
+			Room vRoom = vBeamer.getRoom();
+			if (!vRoom.equals(player.getCurrentRoom()))
+			{
+				gui.println("You are using the beamer.");
+				player.changeRoom(vRoom);
+				vBeamer.setCharged(false);
+				roomHistory.clear();
+				roomHistory.push(player.getCurrentRoom());
+                printLocationInfo();
+                if(player.getCurrentRoom().getImageName() != null)
+                    gui.showImage(player.getCurrentRoom().getImageName());
+			}
+			else
+			{
+				gui.println("You are already in the charged room.");
+			}
+		}
+		else
+		{
+			gui.println("You need to charge to beamer.");
+        }
+    }
+    
     public void items()
     {
         gui.println(this.player.getItemString());
@@ -351,13 +412,13 @@ public class GameEngine implements ActionListener
     
     public void actionPerformed(ActionEvent e)
     {
-    	this.aTimeLimit--;
-    	if (aTimeLimit <= 0)
-    	{
-    		gui.println("There is no time left, game over..");
+        this.aTimeLimit--;
+        if (aTimeLimit <= 0)
+        {
+            gui.println("There is no time left, game over..");
             gui.enable(false);
-    		endGame();
-    		timer.stop();
-    	}
-	}
+            endGame();
+            timer.stop();
+        }
+    }
 } // Game
