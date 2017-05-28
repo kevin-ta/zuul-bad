@@ -2,7 +2,9 @@ import java.util.Random;
 import java.util.ArrayList;
 
 /**
- * RoomRandomizer
+ * Classe qui permet de choisir une piece aleatoire
+ * @author Kevin Ta
+ * @version 2015 - 2016
  */
 public class RoomRandomizer
 {
@@ -12,6 +14,7 @@ public class RoomRandomizer
 
     /**
      * Constructeur de la classe RoomRandomizer
+     * @param pRooms Une ArrayList contenant la liste des pieces
      */
     public RoomRandomizer(final ArrayList<Room> pRooms)
     {
@@ -28,7 +31,8 @@ public class RoomRandomizer
     }
 
     /**
-     * Retourne une pièce aléatoire
+     * Fonction retournant une piece aleatoire
+     * @return Un objet Room aleatoire
      */
     public Room nextRoom()
     {
@@ -38,7 +42,8 @@ public class RoomRandomizer
     }
     
     /**
-     * Mutateur pour définir le seed
+     * Mutateur permettant de definir le seed
+     * @param pSeed Un seed
      */
     public static void setSeed(final Long pSeed)
     {

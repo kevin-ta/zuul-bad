@@ -24,7 +24,7 @@ public enum CommandWord
     
     /**
      * Initialise with the corresponding command word.
-     * @param commandWord The command string.
+     * @param commandString The command string.
      */
     CommandWord(String commandString)
     {
@@ -32,6 +32,7 @@ public enum CommandWord
     }
     
     /**
+     * Fonction permettant de renvoyer la commande en tant que chaine de caracteres
      * @return The command word as a string.
      */
     public String toString()

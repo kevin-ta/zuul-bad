@@ -18,19 +18,20 @@ import java.util.StringTokenizer;
  */
 public class Parser 
 {
-    private CommandWords aValidCommands;  // (voir la classe CommandWords)
+    private CommandWords aValidCommands;
 
     /**
-     * Constructeur par defaut qui cree les 2 objets prevus pour les attributs
+     * Constructeur de la classe Parser qui cree les 2 objets prevus pour les attributs
      */
     public Parser() 
     {
         this.aValidCommands = new CommandWords();
-    } // Parser()
+    }
 
     /**
-     * Get a new command from the user. The command is read by
-     * parsing the 'inputLine'.
+     * Get a new command from the user. The command is read by parsing the 'inputLine'.
+     * @param inputLine A string containing the inputline
+     * @return A new instantiated Command object
      */
     public Command getCommand(String inputLine) 
     {
@@ -58,10 +59,11 @@ public class Parser
     }
     
     /**
-     * Affiche tous les commandes valides
+     * Fonction retournant une chaine de caracteres contenant la liste des commandes disponibles
+     * @return Une chaine de caracteres contenant la liste des commandes disponibles
      */
     public String getCommandList()
     {
         return aValidCommands.getCommandList();
     }
-} // Parser
+}

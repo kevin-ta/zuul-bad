@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 /**
  * This is the representation of a player in the game Zuul.
+ * @author Kevin Ta
+ * @version 2015 - 2016
  */
 public class Player
 {
@@ -12,6 +14,7 @@ public class Player
     
     /**
      * Constructor for objects of class Player
+     * @param pName A string containing the name of the player
      */
     public Player(final String pName)
     {
@@ -22,6 +25,7 @@ public class Player
 
     /**
      * Enter the given room.
+     * @param nextRoom A Room object
      */
     public void changeRoom(final Room nextRoom)
     {
@@ -30,6 +34,7 @@ public class Player
     
     /**
      * Gets the room in which the player is currently located.
+     * @return A Room object which corresponds to the current room
      */
     public Room getCurrentRoom()
     {
@@ -38,14 +43,16 @@ public class Player
     
     /**
      * Gets the name
+     * @return A string containing the name of the player
      */
     public String getName()
     {
         return this.aName;
     }
     
-        /**
+    /**
      * Add an item in the list inventory.
+     * @param item An Item object
      */
     public void addItem(Item item)
     {
@@ -54,6 +61,7 @@ public class Player
     
     /**
      * Remove an item in the list inventory.
+     * @param item An Item object
      */
     public void removeItem(Item item)
     {
@@ -62,6 +70,8 @@ public class Player
     
     /**
      * Find an item in the list items.
+     * @param item An Item object
+     * @return An Item object or null
      */
     public Item findItem(String item)
     {
@@ -70,6 +80,7 @@ public class Player
     
     /**
      * Accesseur du poids max de l'inventaire
+     * @return Le poids maximum de l'inventaire
      */
     public double getMaxWeight()
     {
@@ -77,7 +88,8 @@ public class Player
     }
     
      /**
-     * Mutateur du poids max de l'inventaire
+     * Mutateur permettant de modifier le poids max de l'inventaire
+     * @param pWeight The weight of the item
      */
     public void setMaxWeight(final double pWeight)
     {
@@ -85,7 +97,8 @@ public class Player
     }
     
     /**
-     * Accesseur du poids actuelle de l'inventaire
+     * Accesseur permettant d'acceder au poids actuelle de l'inventaire
+     * @return Le poids current de l'inventaire
      */
     public double getCurrentWeight()
     {
@@ -93,7 +106,8 @@ public class Player
     }
     
     /**
-     * Accesseur qui retourne les objets actuels de l'inventaire
+     * Fonction retournant une chaine de caracteres contenant les objets actuels de l'inventaire
+     * @return Une chaine de caractere contenant les objets actuels de l'inventaire
      */
     public String getItemString()
     {

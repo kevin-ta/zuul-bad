@@ -46,6 +46,7 @@ public class UserInterface implements ActionListener
 
     /**
      * Print out some text into the text area.
+     * @param text A string
      */
     public void print(String text)
     {
@@ -55,6 +56,7 @@ public class UserInterface implements ActionListener
 
     /**
      * Print out some text into the text area, followed by a line break.
+     * @param text A string
      */
     public void println(String text)
     {
@@ -64,6 +66,7 @@ public class UserInterface implements ActionListener
 
     /**
      * Show an image file in the interface.
+     * @param imageName A string contaning the filename of an image
      */
     public void showImage(String imageName)
     {
@@ -79,6 +82,7 @@ public class UserInterface implements ActionListener
 
     /**
      * Enable or disable input in the input field.
+     * @param on A boolean
      */
     public void enable(boolean on)
     {
@@ -158,6 +162,7 @@ public class UserInterface implements ActionListener
 
     /**
      * Actionlistener interface for entry textfield.
+     * @param e An ActionEvent object
      */
     public void actionPerformed(ActionEvent e) 
     {

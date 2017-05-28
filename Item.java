@@ -1,5 +1,7 @@
 /**
- * Classe item
+ * Classe permettant de gerer les items du jeu
+ * @author Kevin Ta
+ * @version 2015 - 2016
  */
 public class Item
 {
@@ -8,6 +10,8 @@ public class Item
 
     /**
      * Constructeur de la classe item
+     * @param pDescription Le nom de l'objet Item
+     * @param pWeight Le poids de l'objet Item
      */
     public Item(final String pDescription, final double pWeight)
     {
@@ -16,7 +20,8 @@ public class Item
     }
     
     /**
-     * Accesseur pour avoir la description de l'item
+     * Accesseur permettant d'acceder au nom de l'item
+     * @return Le nom de l'item
      */
     public String getDescription()
     {
@@ -24,7 +29,8 @@ public class Item
     }
     
     /**
-     * Accesseur pour avoir la description de l'item
+     * Mutateur permettant de modifier le nom de l'item
+     * @param pDescription Le nom de l'item
      */
     public void setDescription(final String pDescription)
     {
@@ -32,7 +38,8 @@ public class Item
     }
     
     /**
-     * Accesseur pour avoir le poids de l'item
+     * Accesseur permettant d'acceder au poids de l'item
+     * @return Le poids de l'item
      */
     public double getWeight()
     {
@@ -40,7 +47,8 @@ public class Item
     }
     
     /**
-     * Mutateur pour définir le poids de l'item
+     * Mutateur permettant de modifier le poids de l'item
+     * @param pWeight Le poids de l'item
      */
     public void setWeight(final double pWeight)
     {
@@ -48,7 +56,8 @@ public class Item
     }
     
     /**
-     * Accesseur pour avoir la description de l'item et son poids
+     * Fonction retournant une chaine de caracteres contenant le nom de l'item et son poids
+     * @return Une chaine de caracteres contenant le nom de l'item et son poids
      */
     public String getLongDescription()
     {

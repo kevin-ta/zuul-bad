@@ -8,7 +8,9 @@ import javax.swing.Timer;
 import java.util.ArrayList;
 
 /**
- * Classe principale du jeu, elle permet de démarrer Zuul.
+ * Classe principale du jeu, elle permet de demarrer Zuul.
+ * @author Kevin Ta
+ * @version 2015 - 2016
  */
 public class GameEngine implements ActionListener
 {
@@ -37,7 +39,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Création du gui
+     * Procedure permettant la creation du GUI
+     * @param userInterface Un objet UserInterface
      */
     public void setGUI(UserInterface userInterface)
     {
@@ -46,7 +49,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Procédure permettant de créer les pièces du jeu
+     * Fonction permettant de creer les pieces du jeu
+     * @return Un objet Room correspondant a la premiere piece du jeu
      */
     private Room createRooms()
     {
@@ -90,7 +94,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Accesseur de la liste des pièces
+     * Accesseur permettant d'acceder a la liste des pieces
+     * @return Une ArrayList contenant les pieces du jeu
      */
     public static ArrayList<Room> getRooms()
     {
@@ -101,6 +106,7 @@ public class GameEngine implements ActionListener
      * Given a command, process (that is: execute) the command.
      * If this command ends the game, true is returned, otherwise false is
      * returned.
+     * @param commandLine A string containing a command
      */
     public void interpretCommand(String commandLine) 
     {
@@ -147,7 +153,7 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Affiche des informations sur la pièce actuelle
+     * Procedure permettant d'afficher des informations sur la piece actuelle
      */
     private void printLocationInfo()
     {
@@ -155,7 +161,7 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Affiche le message de bienvenue
+     * Procedure permettant d'afficher le message de bienvenue
      */
     private void printWelcome()
     {
@@ -167,7 +173,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Commande de déplacement
+     * Procedure correspondant a la commande de deplacement
+     * @param pCommand Un objet Command contenant comme premier mot go
      */
     private void goRoom(final Command pCommand)
     {
@@ -193,7 +200,7 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Commande d'aide
+     * Procedure correspondant a la commande d'aide
      */
     private void printHelp()
     {
@@ -204,7 +211,7 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Affiche des informations sur la pièce actuelle
+     * Procedure permettant d'afficher des informations sur la piece actuelle
      */
     private void look()
     {
@@ -212,7 +219,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Commande eat
+     * Procedure correspondant a la commande eat
+     * @param pCommand Un objet Command contenant comme premier mot eat
      */
     private void eat(final Command pCommand)
     {
@@ -241,7 +249,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Permet de revenir en arrière
+     * Procedure correspondant a la commande back
+     * @param pCommand Un objet Command contenant comme premier mot back
      */
     private void goBack(final Command pCommand)
     {
@@ -271,7 +280,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Test
+     * Procedure correspondant a la commande test
+     * @param command Un objet Command contenant comme premier mot test
      */
     private void test(Command command) 
     { 
@@ -299,7 +309,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Take
+     * Procedure correspondant a la commande take
+     * @param command Un objet Command contenant comme premier mot take
      */
     public void take(Command command)
     {
@@ -333,7 +344,8 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Take
+     * Procedure correspondant a la commande drop
+     * @param command Un objet Command contenant comme premier mot drop
      */
     public void drop(Command command)
     {
@@ -359,8 +371,8 @@ public class GameEngine implements ActionListener
         }
     }
     
-     /**
-     * Charge
+    /**
+     * Procedure correspondant a la commande charge
      */
     public void charge()
     {
@@ -377,7 +389,7 @@ public class GameEngine implements ActionListener
     }
     
     /**
-     * Teleport
+     * Procedure correspondant a la commande teleport
      */
     public void teleport()
     {
@@ -415,7 +427,8 @@ public class GameEngine implements ActionListener
     }
 	
     /**
-     * Alea
+     * Procedure correspondant a la commande alea
+     * @param command Un objet Command contenant comme premier mot eat
      */
     public void alea(Command command)
 	{
@@ -440,6 +453,9 @@ public class GameEngine implements ActionListener
         }
 	}
     
+    /**
+     * Procedure permettant d'afficher l'inventaire
+     */
     public void items()
     {
         gui.println(this.player.getItemString());
@@ -447,7 +463,7 @@ public class GameEngine implements ActionListener
     }
 
     /**
-     * Met fin au jeu
+     * Procedure permettant de mettre fin au jeu
      */
     private void endGame()
     {
@@ -455,6 +471,10 @@ public class GameEngine implements ActionListener
         gui.enable(false);
     }
     
+    /**
+     * Procedure correspondant au timer du jeu
+     * @param e Un objet ActionEvent
+     */
     public void actionPerformed(ActionEvent e)
     {
         this.aTimeLimit--;
@@ -466,4 +486,4 @@ public class GameEngine implements ActionListener
             timer.stop();
         }
     }
-} // Game
+}

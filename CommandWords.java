@@ -16,7 +16,7 @@ public class CommandWords
     private HashMap<String, CommandWord> validCommands;
 
     /**
-     * Constructeur par defaut
+     * Constructeur de la classe CommandWords
      */
     public CommandWords()
     {
@@ -26,20 +26,21 @@ public class CommandWords
                 validCommands.put(command.toString(), command);
             }
         }
-    } // CommandWords()
+    }
 
     /**
-     * Verifie si une String donnee fait partie des commandes valides. 
+     * Verifie si une chaine de caractere donnee fait partie des commandes valides. 
      * @param pString la String a tester
-     * @return true si pString est une comande valide, false sinon
+     * @return true si pString est une commande valide, false sinon
      */
     public boolean isCommand(final String pString)
     {
         return validCommands.containsKey(pString);
-    } // isCommand()
+    }
     
     /**
      * Affiche tous les commandes valides
+     * @return Une chaine de caractere contenant la liste des commandes
      */
     public String getCommandList() {
         String vCommandList = new String();
@@ -66,4 +67,4 @@ public class CommandWords
             return CommandWord.UNKNOWN;
         }
     }
-} // CommandWords
+}

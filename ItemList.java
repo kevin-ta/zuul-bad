@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 
-   /**
-    * Class for creating lists of items
-    */
-   public class ItemList
-   {
+/**
+ * Classe permettant de creer un inventaire d'items
+ * @author Kevin Ta
+ * @version 2015 - 2016
+ */
+public class ItemList
+{
     private ArrayList<Item> items;
 
     /**
-     * Constructor of class ItemList.
+     * Constructeur de la classe ItemList
      */
     public ItemList()
     {
@@ -16,7 +18,8 @@ import java.util.ArrayList;
     }
 
     /**
-     * Add an item in a list.
+     * Procedure permettant d'ajouter un item dans l'inventaire
+     * @param item Un objet Item
      */
     public void addItem(Item item)
     {
@@ -24,7 +27,8 @@ import java.util.ArrayList;
     }
 
     /**
-     * Remove an item in a list.
+     * Procedure permettant de supprimer un item de l'inventaire
+     * @param item Un objet Item
      */
     public void removeItem(Item item)
     {
@@ -32,7 +36,9 @@ import java.util.ArrayList;
     }
 
     /**
-     * Find an item in a list with its name.
+     * Fonction permettant de retrouver un item dans l'inventaire
+     * @param item Un objet Item
+     * @return L'objet Item correspondant s'il existe dans l'inventaire sinon null
      */
     public Item findItem(String item)
     {
@@ -48,7 +54,8 @@ import java.util.ArrayList;
     }
 
     /**
-     * @return all the items present in a list.
+     * Fonction retournant une chaine de caracteres contenant tous les items de l'inventaire
+     * @return Une chaine de caracteres contenant tous les items de l'inventaire
      */
     public String getItemString()
     {
@@ -61,7 +68,8 @@ import java.util.ArrayList;
     }
     
     /**
-     * @return the current weight of a list
+     * Fonction retournant le poids courant de l'inventaire
+     * @return le poids courant de l'inventaire
      */
     public double getCurrentWeight()
         {

@@ -4,7 +4,9 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 /**
- * Classe qui gère la partie pièce du jeu
+ * Classe permettant de gerer les pieces du jeu
+ * @author Kevin Ta
+ * @version 2015 - 2016
  */
 public class Room
 {
@@ -15,7 +17,9 @@ public class Room
     
     /**
      * Constructeur de la classe Game
-     * Il permet d'initialiser un objet pièce et la HashMap des sorties possibles
+     * Il permet d'initialiser un objet piece et la HashMap des sorties possibles
+     * @param pDescription Le nom de la piece
+     * @param image Le nom du fichier image
      */
     public Room(final String pDescription, final String image)
     {
@@ -26,7 +30,9 @@ public class Room
     }
 
     /**
-     * Accesseur qui retourne la sortir
+     * Accesseur qui retourne la sortie
+     * @param pDirection Une direction
+     * @return La valeur de la cle pDirection dans la hasmap exits sinon null
      */
     public Room getExit(final String pDirection)
     {
@@ -34,7 +40,8 @@ public class Room
     }
     
     /**
-     * Mutateur qui retourne la liste des sorties
+     * Fonction retournant une chaine de caracteres contenant la liste des sorties
+     * @return Une chaine de caracteres contenant la liste des sorties
      */
     private String getExitString()
     {
@@ -48,7 +55,9 @@ public class Room
     }
     
     /**
-     * Crée une sortie dans une direction donnée
+     * Cree une sortie dans une direction donnee
+     * @param pDirection La direction de la sortie
+     * @param pNeighbor Le nom de la piece voisine correspondant a cette sortie
      */
     public void setExit(final String pDirection, final Room pNeighbor)
     {
@@ -56,7 +65,8 @@ public class Room
     }
     
     /**
-     * Accesseur qui retourne la description de la pièce
+     * Accesseur retournant une chaine de caracteres contenant la description de la piece
+     * @return Une chaine de caracteres contenant la description de la piece
      */
     public String getLongDescription()
     {
@@ -64,7 +74,9 @@ public class Room
     }
     
     /**
-     * Accesseur qui retourne la direction de la pièce
+     * Accesseur qui retourne la direction de la piece
+     * @param pRoom Un objet Room
+     * @return une chaine de caracteres contenant la direction de la piece sinon null
      */
     public String getDirection(final Room pRoom)
     {
@@ -82,6 +94,7 @@ public class Room
     
     /**
      * Return a string describing the room's image name
+     * @return A string describing the room's image name
      */
     public String getImageName()
     {
@@ -89,7 +102,8 @@ public class Room
     }
     
     /**
-     * Add an item in the list items.
+     * Add an item in the list items
+     * @param item An item object
      */
     public void addItem(Item item)
     {
@@ -97,7 +111,8 @@ public class Room
     }
     
     /**
-     * Remove an item in the list items.
+     * Remove an item in the list items
+     * @param item An item object
      */
     public void removeItem(Item item)
     {
@@ -105,7 +120,9 @@ public class Room
     }
     
     /**
-     * Find an item in the list items.
+     * Find an item in the list items
+     * @param item An item object
+     * @return An Item object or null
      */
     public Item findItem(String item)
     {
@@ -113,10 +130,10 @@ public class Room
     }
     
     /**
-     * @return all the items present in a list.
+     * @return all the items present in a list
      */
     public String getItemString()
     {
         return this.items.getItemString();
     }
-} // Room
+}
