@@ -30,6 +30,7 @@ public enum CommandWord
     /**
      * Initialise with the corresponding command word.
      * @param commandString The command string.
+     * @param pCommand The Command class
      */
     CommandWord(String commandString, Command pCommand)
     {

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="fr">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>package pkg_commands;<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>import pkg_game.GameEngine;<a name="line.3"></a>
+<span class="sourceLineNo">004</span>import pkg_game.Player;<a name="line.4"></a>
+<span class="sourceLineNo">005</span>import pkg_item.Item;<a name="line.5"></a>
+<span class="sourceLineNo">006</span><a name="line.6"></a>
+<span class="sourceLineNo">007</span>/**<a name="line.7"></a>
+<span class="sourceLineNo">008</span> * Classe de la commande take<a name="line.8"></a>
+<span class="sourceLineNo">009</span> * <a name="line.9"></a>
+<span class="sourceLineNo">010</span> * @author Kevin Ta<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * @version 2015 - 2016<a name="line.11"></a>
+<span class="sourceLineNo">012</span> */<a name="line.12"></a>
+<span class="sourceLineNo">013</span>public class TakeCommand extends Command<a name="line.13"></a>
+<span class="sourceLineNo">014</span>{<a name="line.14"></a>
+<span class="sourceLineNo">015</span>    /**<a name="line.15"></a>
+<span class="sourceLineNo">016</span>     * Constructeur de la classe TakeCommand<a name="line.16"></a>
+<span class="sourceLineNo">017</span>     */<a name="line.17"></a>
+<span class="sourceLineNo">018</span>    public TakeCommand()<a name="line.18"></a>
+<span class="sourceLineNo">019</span>    {<a name="line.19"></a>
+<span class="sourceLineNo">020</span>    }<a name="line.20"></a>
+<span class="sourceLineNo">021</span>    <a name="line.21"></a>
+<span class="sourceLineNo">022</span>    /**<a name="line.22"></a>
+<span class="sourceLineNo">023</span>     * Fonction permettant d'executer la commande take<a name="line.23"></a>
+<span class="sourceLineNo">024</span>     * @param player Un objet Player<a name="line.24"></a>
+<span class="sourceLineNo">025</span>     * @return false<a name="line.25"></a>
+<span class="sourceLineNo">026</span>     */<a name="line.26"></a>
+<span class="sourceLineNo">027</span>    public boolean execute(Player player)<a name="line.27"></a>
+<span class="sourceLineNo">028</span>    {<a name="line.28"></a>
+<span class="sourceLineNo">029</span>        if(!this.hasSecondWord()) <a name="line.29"></a>
+<span class="sourceLineNo">030</span>        {<a name="line.30"></a>
+<span class="sourceLineNo">031</span>            GameEngine.gui.println("Take what?\n");<a name="line.31"></a>
+<span class="sourceLineNo">032</span>            return false;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>        }<a name="line.33"></a>
+<span class="sourceLineNo">034</span>        <a name="line.34"></a>
+<span class="sourceLineNo">035</span>        String name = this.getSecondWord();<a name="line.35"></a>
+<span class="sourceLineNo">036</span>        Item item = (player.getCurrentRoom()).findItem(name);<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>        if (item != null)<a name="line.38"></a>
+<span class="sourceLineNo">039</span>        {<a name="line.39"></a>
+<span class="sourceLineNo">040</span>            double weight = item.getWeight();<a name="line.40"></a>
+<span class="sourceLineNo">041</span>            if (player.getMaxWeight() - weight &gt;= 0)<a name="line.41"></a>
+<span class="sourceLineNo">042</span>            {<a name="line.42"></a>
+<span class="sourceLineNo">043</span>                player.getCurrentRoom().removeItem(item);<a name="line.43"></a>
+<span class="sourceLineNo">044</span>                player.addItem(item);<a name="line.44"></a>
+<span class="sourceLineNo">045</span>                player.setMaxWeight(-weight);<a name="line.45"></a>
+<span class="sourceLineNo">046</span>            }<a name="line.46"></a>
+<span class="sourceLineNo">047</span>            else<a name="line.47"></a>
+<span class="sourceLineNo">048</span>            {<a name="line.48"></a>
+<span class="sourceLineNo">049</span>                GameEngine.gui.println("You can't take more.\n");<a name="line.49"></a>
+<span class="sourceLineNo">050</span>            }<a name="line.50"></a>
+<span class="sourceLineNo">051</span>        }     <a name="line.51"></a>
+<span class="sourceLineNo">052</span>        else<a name="line.52"></a>
+<span class="sourceLineNo">053</span>        {<a name="line.53"></a>
+<span class="sourceLineNo">054</span>            GameEngine.gui.println("The item doesn't exist.\n");<a name="line.54"></a>
+<span class="sourceLineNo">055</span>        }<a name="line.55"></a>
+<span class="sourceLineNo">056</span>        return false;<a name="line.56"></a>
+<span class="sourceLineNo">057</span>    }<a name="line.57"></a>
+<span class="sourceLineNo">058</span>}<a name="line.58"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

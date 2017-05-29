@@ -9,7 +9,7 @@ import pkg_game.Player;
  *
  * Objects of class Command can store an optional argument word (a second
  * word entered on the command line). If the command had only one word, 
- * then the second word is <null>.
+ * then the second word is null.
  * 
  * @author Michael Kolling and David J. Barnes
  * @version 2011.07.31
@@ -41,6 +41,7 @@ public abstract class Command
      * Define the second word of this command (the word
      * entered after the command word). Null indicates that 
      * there was no second word.
+     * @param secondWord A string containing the second word
      */
     public void setSecondWord(String secondWord)
     {
@@ -59,7 +60,7 @@ public abstract class Command
     /**
      * Execute this command. A flag is returned indicating whether
      * the game is over as a result of this command.
-     * 
+     * @param player A player object
      * @return True, if game should exit; false otherwise.
      */
     public abstract boolean execute(Player player);

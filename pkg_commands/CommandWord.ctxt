@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.params=commandString\ pCommand
 comment0.target=CommandWord(java.lang.String,\ Command)
-comment0.text=\r\n\ Initialise\ with\ the\ corresponding\ command\ word.\r\n\ @param\ commandString\ The\ command\ string.\r\n
+comment0.text=\r\n\ Initialise\ with\ the\ corresponding\ command\ word.\r\n\ @param\ commandString\ The\ command\ string.\r\n\ @param\ pCommand\ The\ Command\ class\r\n
 comment1.params=
 comment1.target=java.lang.String\ toString()
 comment1.text=\r\n\ Fonction\ permettant\ de\ renvoyer\ la\ commande\ en\ tant\ que\ chaine\ de\ caracteres\r\n\ @return\ The\ command\ word\ as\ a\ string.\r\n
