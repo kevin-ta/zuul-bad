@@ -29,4 +29,9 @@ public class Game
         gui = new UserInterface(engine);
         engine.setGUI(gui);
     }
+    
+    public static void main(String[] args)
+    {
+        new Game();
+    }
 }
