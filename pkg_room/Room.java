@@ -1,5 +1,6 @@
 package pkg_room;
 
+import pkg_character.*;
 import pkg_item.Item;
 import pkg_item.ItemList;
 import java.util.HashMap;
@@ -18,6 +19,7 @@ public class Room
     private HashMap<String, Room> exits;
     private String imageName;
     private ItemList items;
+    private CharacterList characters;
     
     /**
      * Constructeur de la classe Game
@@ -31,6 +33,7 @@ public class Room
         this.exits = new HashMap<String, Room>();
         this.imageName = image;
         this.items = new ItemList();
+        this.characters = new CharacterList();
     }
 
     /**
@@ -74,7 +77,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "Vous etes " + this.aDescription + "\n"  + getExitString() + "\n" + items.getItemString();
+        return "Vous etes " + this.aDescription + "\n"  + getExitString() + "\n" + items.getItemString() + "\n" + getCharacterString();
     }
     
     /**
@@ -139,5 +142,32 @@ public class Room
     public String getItemString()
     {
         return this.items.getItemString();
+    }
+    
+    /**
+     * Add a character in the list characters
+     * @param character A character object
+     */
+    public void addCharacter(pkg_character.Character character)
+    {
+        this.characters.addCharacter(character);
+    }
+
+    /**
+     * Find a character in the list characters
+     * @param character A character
+     * @return A character object or null
+     */
+    public pkg_character.Character FindCharacter(String character)
+    {
+        return this.characters.findCharacter(character);
+    }
+    
+    /**
+     * @return all the characters present in a list
+     */
+    public String getCharacterString()
+    {
+        return this.characters.getCharacterString();
     }
 }

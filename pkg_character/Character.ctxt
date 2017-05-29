@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=pName\ pDialogue
+comment0.target=Character(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ Character\r\n\ @param\ pName\ Le\ nom\ du\ Character\r\n\ @param\ pDialogue\ Le\ dialogue\ du\ Character\r\n
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment1.text=\r\n\ Accesseur\ permettant\ d'acceder\ au\ nom\ du\ Character\r\n\ @return\ Une\ chaine\ de\ caractere\ contenant\ le\ nom\ du\ Character\r\n
+comment2.params=
+comment2.target=java.lang.String\ getDialogue()
+comment2.text=\r\n\ Accesseur\ permettant\ d'acceder\ au\ dialogue\ du\ Character\r\n\ @return\ Une\ chaine\ de\ caractere\ contenant\ le\ dialogue\ du\ Character\r\n
+numComments=3

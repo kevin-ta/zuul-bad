@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=CharacterList()
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ CharacterList\r\n
+comment1.params=pCharacter
+comment1.target=void\ addCharacter(Character)
+comment1.text=\r\n\ Fonction\ permettant\ d'ajouter\ un\ Character\r\n\ @param\ pCharacter\ Un\ objet\ Character\r\n
+comment2.params=
+comment2.target=java.lang.String\ getCharacterString()
+comment2.text=\r\n\ Fonction\ permettant\ de\ retourner\ une\ chaine\ de\ caractere\ contenant\ la\ liste\ des\ Character\r\n\ @return\ Une\ chaine\ de\ caractere\ contenant\ la\ liste\ des\ Character\r\n
+comment3.params=pCharacter
+comment3.target=Character\ findCharacter(java.lang.String)
+comment3.text=\r\n\ Fonction\ permettant\ de\ retrouver\ un\ Character\r\n\ @return\ L'objet\ Character\ recherche\ sinon\ null\r\n
+numComments=4

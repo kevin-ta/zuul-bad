@@ -23,6 +23,7 @@ public enum CommandWord
     CHARGE("charge", new ChargeCommand()),
     TELEPORT("teleport", new TeleportCommand()),
 	ALEA("alea", new AleaCommand()),
+	TALK("talk", new TalkCommand()),
     UNKNOWN("?", null);
     private String commandString;
     private Command command;

@@ -1,5 +1,6 @@
 package pkg_game;
 
+import pkg_character.Character;
 import pkg_item.*;
 import pkg_commands.Command;
 import pkg_commands.Parser;
@@ -93,7 +94,11 @@ public class GameEngine implements ActionListener
         rooms.add(vPub);
         rooms.add(vLab);
         rooms.add(vOffice);
-
+        
+        vOutside.addCharacter(new Character("guardian", "Hello I'm the guardian of the well-known Poste Nord"));
+        vOutside.addCharacter(new Character("zephyr", "The best BDE ever <3"));
+        vOutside.addCharacter(new Character("macao", "The best family <3"));
+ 
         return vOutside;
     }
     
