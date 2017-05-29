@@ -1,9 +1,11 @@
 package pkg_commands;
 
 import pkg_character.Character;
+import pkg_character.MovingCharacter;
 import pkg_game.GameEngine;
 import pkg_game.Player;
 import pkg_item.Item;
+import pkg_room.Room;
 
 /**
  * Classe de la commande talk
@@ -39,7 +41,14 @@ public class TalkCommand extends Command
         if (character != null)
         {
             String dialogue = character.getDialogue();
-           GameEngine.gui.println(dialogue + "\n");
+            GameEngine.gui.println(dialogue + "\n");
+            Room room = character.getNextRoom();
+            if(room != null && player.getCurrentRoom() != room)
+            {
+                character.getNextRoom().addCharacter(character);
+                player.getCurrentRoom().removeCharacter(character);
+                GameEngine.gui.println(character.getName() + " is moving\n");
+            }
         }     
         else
         {

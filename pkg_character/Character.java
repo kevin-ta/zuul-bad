@@ -1,5 +1,7 @@
 package pkg_character;
 
+import pkg_room.Room;
+
 /**
  * Classe permettant de creer un Character
  * @author Kevin Ta
@@ -37,5 +39,14 @@ public class Character
     public String getDialogue()
     {
         return this.aDialogue;
+    }
+    
+    /**
+     * Accesseur permettant d'acceder à la prochaine pièce du Character
+     * @return null car seul un moving character peut bouger
+     */
+    public Room getNextRoom()
+    {
+        return null;
     }
 }

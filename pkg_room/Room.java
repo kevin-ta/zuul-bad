@@ -152,6 +152,15 @@ public class Room
     {
         this.characters.addCharacter(character);
     }
+    
+    /**
+     * Remove a character in the list characters
+     * @param character A character object
+     */
+    public void removeCharacter(pkg_character.Character character)
+    {
+        this.characters.removeCharacter(character);
+    }
 
     /**
      * Find a character in the list characters
@@ -162,7 +171,7 @@ public class Room
     {
         return this.characters.findCharacter(character);
     }
-    
+
     /**
      * @return all the characters present in a list
      */

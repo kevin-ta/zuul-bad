@@ -29,6 +29,15 @@ public class CharacterList
     }
     
     /**
+     * Fonction permettant de retirer un Character
+     * @param character A character object
+     */
+    public void removeCharacter(Character character)
+    {
+        this.aCharacters.remove(character);
+    }
+    
+    /**
      * Fonction permettant de retourner une chaine de caractere contenant la liste des Character
      * @return Une chaine de caractere contenant la liste des Character
      */
