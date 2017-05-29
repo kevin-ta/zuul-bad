@@ -13,5 +13,5 @@ comment3.target=java.lang.String\ getCharacterString()
 comment3.text=\r\n\ Fonction\ permettant\ de\ retourner\ une\ chaine\ de\ caractere\ contenant\ la\ liste\ des\ Character\r\n\ @return\ Une\ chaine\ de\ caractere\ contenant\ la\ liste\ des\ Character\r\n
 comment4.params=pCharacter
 comment4.target=Character\ findCharacter(java.lang.String)
-comment4.text=\r\n\ Fonction\ permettant\ de\ retrouver\ un\ Character\r\n\ @return\ L'objet\ Character\ recherche\ sinon\ null\r\n
+comment4.text=\r\n\ Fonction\ permettant\ de\ retrouver\ un\ Character\r\n\ @param\ pCharacter\ L'objet\ Character\ recherche\r\n\ @return\ L'objet\ Character\ recherche\ sinon\ null\r\n
 numComments=5

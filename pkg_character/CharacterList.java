@@ -53,6 +53,7 @@ public class CharacterList
     
     /**
      * Fonction permettant de retrouver un Character
+     * @param pCharacter L'objet Character recherche
      * @return L'objet Character recherche sinon null
      */
     public Character findCharacter(String pCharacter)
