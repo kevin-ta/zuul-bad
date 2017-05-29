@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=EatCommand()
+comment0.text=\r\n\ Constructeur\ de\ la\ classe\ EatCommand\r\n
+comment1.params=player
+comment1.target=boolean\ execute(pkg_game.Player)
+comment1.text=\r\n\ Fonction\ permettant\ d'executer\ la\ commande\ eat\r\n\ @param\ player\ Un\ objet\ Player\r\n\ @return\ false\r\n
+numComments=2

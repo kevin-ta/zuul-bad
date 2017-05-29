@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Command()
+comment0.text=\r\n\ Create\ a\ command\ object.\ First\ and\ second\ word\ must\ be\ supplied,\ but\r\n\ either\ one\ (or\ both)\ can\ be\ null.\ The\ command\ word\ should\ be\ null\ to\r\n\ indicate\ that\ this\ was\ a\ command\ that\ is\ not\ recognised\ by\ this\ game.\r\n
+comment1.params=
+comment1.target=java.lang.String\ getSecondWord()
+comment1.text=\r\n\ Accesseur\ permettant\ d'acceder\ au\ second\ mot\ de\ la\ commande\r\n\ @return\ Un\ objet\ CommandWord\r\n
+comment2.params=secondWord
+comment2.target=void\ setSecondWord(java.lang.String)
+comment2.text=\r\n\ Define\ the\ second\ word\ of\ this\ command\ (the\ word\r\n\ entered\ after\ the\ command\ word).\ Null\ indicates\ that\ \r\n\ there\ was\ no\ second\ word.\r\n
+comment3.params=
+comment3.target=boolean\ hasSecondWord()
+comment3.text=\r\n\ Teste\ si\ la\ commande\ possede\ un\ second\ mot\r\n\ @return\ True\ si\ la\ commande\ possede\ un\ second\ mot\ sinon\ false\r\n
+comment4.params=player
+comment4.target=boolean\ execute(pkg_game.Player)
+comment4.text=\r\n\ Execute\ this\ command.\ A\ flag\ is\ returned\ indicating\ whether\r\n\ the\ game\ is\ over\ as\ a\ result\ of\ this\ command.\r\n\ \r\n\ @return\ True,\ if\ game\ should\ exit;\ false\ otherwise.\r\n
+numComments=5
